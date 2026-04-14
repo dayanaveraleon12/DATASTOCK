@@ -1,5 +1,7 @@
-07/04/2026
+12/04/2026
+
 Actualización en Figma del borrador del FRONTEND DATASTOCK.
+
 https://www.figma.com/make/ZDPZVHI53b2Y3UZR9IOxYW/Crear-efecto-de-ondulaci%C3%B3n?t=rrWd2AVIcGKYqf9r-1&preview-route=%2Fdashboard%2Fhistory 
 
 
