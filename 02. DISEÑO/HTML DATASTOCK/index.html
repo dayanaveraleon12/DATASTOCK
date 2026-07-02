@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DataStock - Inventario</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="app-wrapper">
+
+    <!-- ============ SIDEBAR ============ -->
+    <aside class="sidebar d-flex flex-column">
+
+      <!-- Brand -->
+      <div class="sidebar-brand d-flex align-items-center gap-2">
+        <div class="brand-icon">
+          <i class="bi bi-box-seam-fill"></i>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">DataStock</span>
+          <span class="brand-subtitle">v2.0 · Empresario</span>
+        </div>
+      </div>
+
+      <!-- Nav -->
+      <nav class="sidebar-nav flex-grow-1">
+
+        <div class="nav-section-title">Principal</div>
+        <ul class="nav flex-column mb-4">
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="bi bi-grid-1x2-fill"></i> Dashboard
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="index.html" class="nav-link active">
+              <i class="bi bi-box-seam-fill"></i> Inventario
+              <i class="bi bi-chevron-right ms-auto link-chevron"></i>
+            </a>
+          </li>
+        </ul>
+
+        <div class="nav-section-title">Solicitudes</div>
+        <ul class="nav flex-column mb-4">
+          <li class="nav-item">
+            <a href="remisiones.html" class="nav-link">
+              <i class="bi bi-clipboard-check-fill"></i> Gestión Remisiones
+            </a>
+          </li>
+        </ul>
+
+        <div class="nav-section-title">Administración</div>
+        <ul class="nav flex-column mb-4">
+          <li class="nav-item">
+            <a href="usuarios.html" class="nav-link">
+              <i class="bi bi-people-fill"></i> Usuarios
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="historial.html" class="nav-link">
+              <i class="bi bi-clock-history"></i> Historial
+            </a>
+          </li>
+        </ul>
+
+        <div class="nav-section-title">Apariencia</div>
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="bi bi-palette-fill"></i> Cambiar Tema
+            </a>
+          </li>
+        </ul>
+
+      </nav>
+
+      <!-- User footer -->
+      <div class="sidebar-user d-flex align-items-center gap-2">
+        <div class="avatar">CR</div>
+        <div class="user-info">
+          <span class="user-name">Carlos Rodríguez</span>
+          <span class="user-email">empresario@datastock.com</span>
+        </div>
+        <a href="login.html" class="logout-icon"><i class="bi bi-box-arrow-right"></i></a>
+      </div>
+
+    </aside>
+
+    <!-- ============ MAIN CONTENT ============ -->
+    <div class="main-content">
+
+      <!-- Topbar -->
+      <header class="topbar d-flex align-items-center justify-content-end">
+        <div class="topbar-user d-flex align-items-center gap-2">
+          <div class="avatar">CR</div>
+          <span class="user-name">Carlos Rodríguez</span>
+          <a href="login.html" class="logout-icon ms-2"><i class="bi bi-box-arrow-right"></i></a>
+        </div>
+      </header>
+
+      <!-- Page body -->
+      <main class="page-body">
+
+        <!-- Page header -->
+        <div class="d-flex flex-wrap justify-content-between align-items-start gap-3 mb-4">
+          <div>
+            <h1 class="page-title">Inventario</h1>
+            <p class="page-subtitle">Gestión de productos y existencias</p>
+          </div>
+          <div class="d-flex gap-2">
+            <button class="btn btn-outline-light btn-action" data-bs-toggle="modal" data-bs-target="#salidaModal">
+              <i class="bi bi-box-arrow-down"></i> Salida de Inventario
+            </button>
+            <button class="btn btn-success btn-action" data-bs-toggle="modal" data-bs-target="#agregarModal">
+              <i class="bi bi-plus-lg"></i> Agregar Inventario
+            </button>
+          </div>
+        </div>
+
+        <!-- Store tabs -->
+        <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
+          <button class="store-tab active">Bodega</button>
+          <button class="store-tab">Tienda 1</button>
+          <button class="store-tab">Tienda 2</button>
+          <button class="store-tab">Tienda 3</button>
+          <button class="store-tab">Tienda 4</button>
+          <button class="store-tab"><i class="bi bi-bar-chart-fill"></i> Stock Total</button>
+          <button class="store-tab store-tab-add"><i class="bi bi-plus-lg"></i> Crear tienda</button>
+        </div>
+
+        <!-- Search -->
+        <div class="search-box mb-3">
+          <i class="bi bi-search"></i>
+          <input type="text" class="form-control" placeholder="Buscar productos por nombre, marca o lote...">
+        </div>
+
+        <!-- Advanced filters -->
+        <div class="card panel-card mb-3">
+          <div class="card-body">
+            <p class="filters-title mb-3">Filtros Avanzados</p>
+            <div class="row g-3">
+              <div class="col-12 col-md-4">
+                <label class="form-label">Categoría</label>
+                <select class="form-select">
+                  <option>Todas las categorías</option>
+                </select>
+              </div>
+              <div class="col-12 col-md-4">
+                <label class="form-label">Marca</label>
+                <select class="form-select">
+                  <option>Todas las marcas</option>
+                </select>
+              </div>
+              <div class="col-12 col-md-4">
+                <label class="form-label">Estado de Vencimiento</label>
+                <select class="form-select">
+                  <option>Todos los productos</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Table -->
+        <div class="card panel-card">
+          <div class="table-responsive">
+            <table class="table align-middle mb-0 product-table">
+              <thead>
+                <tr>
+                  <th>Producto</th>
+                  <th>Marca</th>
+                  <th>Presentación</th>
+                  <th>Stock</th>
+                  <th>Lote</th>
+                  <th>Vencimiento</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="d-flex align-items-center gap-2">
+                      <div class="product-icon"><i class="bi bi-box-seam-fill"></i></div>
+                      <span class="product-name">Arroz Diana x 1kg</span>
+                    </div>
+                  </td>
+                  <td><span class="fw-semibold table-cell-text">Diana</span></td>
+                  <td class="table-cell-text">Bolsa</td>
+                  <td><span class="stock-badge">150</span></td>
+                  <td class="table-cell-text lote-text">ARZ-2024-001</td>
+                  <td class="table-cell-text">30/12/2025</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="d-flex align-items-center gap-2">
+                      <div class="product-icon"><i class="bi bi-box-seam-fill"></i></div>
+                      <span class="product-name">Yogurt Alpina Fresa x 200ml</span>
+                    </div>
+                  </td>
+                  <td><span class="fw-semibold table-cell-text">Alpina</span></td>
+                  <td class="table-cell-text">Vaso</td>
+                  <td><span class="stock-badge">160</span></td>
+                  <td class="table-cell-text lote-text">YGT-2024-006</td>
+                  <td class="table-cell-text">7/3/2024</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </main>
+    </div>
+
+  </div>
+
+  <!-- ============ MODAL: SALIDA DE INVENTARIO ============ -->
+  <div class="modal fade" id="salidaModal" tabindex="-1" aria-labelledby="salidaModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-app-80">
+      <div class="modal-content app-modal">
+
+        <div class="modal-header app-modal-header">
+          <div>
+            <h5 class="app-modal-title" id="salidaModalLabel">Salida de Inventario</h5>
+            <p class="app-modal-subtitle">Registra la salida de productos del inventario indicando el motivo</p>
+          </div>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+
+        <div class="modal-body app-modal-body">
+
+          <div class="info-highlight-box mb-4">
+            <span class="info-highlight-label">Salida desde:</span>
+            <span class="pill-badge-green">Bodega</span>
+          </div>
+
+          <div class="row g-3 mb-3">
+            <div class="col-12 col-md-6">
+              <label class="form-label">Motivo de Salida</label>
+              <select class="form-select form-select-highlight">
+                <option>Selecciona un motivo</option>
+              </select>
+            </div>
+            <div class="col-12 col-md-6">
+              <label class="form-label">Documento Asociado (Opcional)</label>
+              <input type="text" class="form-control login-input" placeholder="Factura, orden, etc.">
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Observaciones</label>
+            <textarea class="form-control login-input" rows="3" placeholder="Detalles adicionales sobre la salida..."></textarea>
+          </div>
+
+          <div class="mb-1">
+            <label class="form-label">Respaldo (Imagen o PDF) <span class="required-asterisk">*</span></label>
+            <div class="file-upload-row">
+              <button type="button" class="file-select-btn">Seleccionar archivo</button>
+              <span class="file-status-text">Ningún archivo seleccionado</span>
+            </div>
+            <p class="form-hint mt-2">Solo se aceptan archivos PDF, JPG o PNG</p>
+          </div>
+
+          <hr class="section-divider">
+
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h6 class="section-heading mb-0">Productos a Retirar</h6>
+            <button type="button" class="btn btn-outline-success-soft btn-sm-action">
+              <i class="bi bi-plus-lg"></i> Agregar Producto
+            </button>
+          </div>
+
+          <div class="subpanel">
+            <div class="row g-3 align-items-end">
+              <div class="col-12 col-md-9">
+                <label class="form-label">Producto y Lote</label>
+                <select class="form-select">
+                  <option>Selecciona un producto y lote</option>
+                </select>
+              </div>
+              <div class="col-12 col-md-3">
+                <label class="form-label">Cantidad</label>
+                <input type="number" class="form-control login-input" value="1" min="1">
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="modal-footer app-modal-footer">
+          <button type="button" class="btn btn-outline-light btn-action" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-action btn-danger-solid">Confirmar Salida</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ MODAL: AGREGAR PRODUCTOS AL INVENTARIO ============ -->
+  <div class="modal fade" id="agregarModal" tabindex="-1" aria-labelledby="agregarModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-app-80">
+      <div class="modal-content app-modal">
+
+        <div class="modal-header app-modal-header">
+          <div>
+            <h5 class="app-modal-title" id="agregarModalLabel">Agregar Productos al Inventario</h5>
+            <p class="app-modal-subtitle">Completa la información de los productos que deseas agregar</p>
+          </div>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+
+        <div class="modal-body app-modal-body">
+
+          <div class="subpanel subpanel-product mb-3">
+            <h6 class="section-heading mb-3">Producto 1</h6>
+
+            <div class="row g-3 mb-3">
+              <div class="col-12 col-md-4">
+                <label class="form-label">Nombre del Producto <span class="required-asterisk">*</span></label>
+                <input type="text" class="form-control login-input">
+              </div>
+              <div class="col-12 col-md-4">
+                <div class="d-flex justify-content-between align-items-center">
+                  <label class="form-label">Marca <span class="required-asterisk">*</span></label>
+                  <a href="#" class="add-new-link"><i class="bi bi-plus-lg"></i> Nueva</a>
+                </div>
+                <select class="form-select">
+                  <option>Seleccionar marca</option>
+                </select>
+              </div>
+              <div class="col-12 col-md-4">
+                <div class="d-flex justify-content-between align-items-center">
+                  <label class="form-label">Categoría <span class="required-asterisk">*</span></label>
+                  <a href="#" class="add-new-link"><i class="bi bi-plus-lg"></i> Nueva</a>
+                </div>
+                <select class="form-select">
+                  <option>Seleccionar categoría</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row g-3 mb-3">
+              <div class="col-12 col-md-4">
+                <div class="d-flex justify-content-between align-items-center">
+                  <label class="form-label">Presentación <span class="required-asterisk">*</span></label>
+                  <a href="#" class="add-new-link"><i class="bi bi-plus-lg"></i> Nueva</a>
+                </div>
+                <select class="form-select">
+                  <option>Seleccionar</option>
+                </select>
+              </div>
+              <div class="col-12 col-md-4">
+                <label class="form-label">Ubicación <span class="required-asterisk">*</span></label>
+                <select class="form-select">
+                  <option>Bodega</option>
+                </select>
+              </div>
+              <div class="col-12 col-md-4">
+                <label class="form-label">Ingreso de Productos <span class="required-asterisk">*</span></label>
+                <input type="number" class="form-control login-input" value="0" min="0">
+              </div>
+            </div>
+
+            <div class="row g-3 mb-3">
+              <div class="col-12 col-md-4">
+                <label class="form-label">Número de Lote <span class="required-asterisk">*</span></label>
+                <input type="text" class="form-control login-input">
+              </div>
+              <div class="col-12 col-md-4">
+                <label class="form-label">Fecha de Ingreso <span class="required-asterisk">*</span></label>
+                <input type="date" class="form-control login-input">
+              </div>
+              <div class="col-12 col-md-4">
+                <label class="form-label">Fecha de Vencimiento <span class="required-asterisk">*</span></label>
+                <input type="date" class="form-control login-input">
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label d-block">Estado del Producto <span class="required-asterisk">*</span></label>
+              <div class="d-flex flex-wrap gap-4 estado-radio-group">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="estadoProducto" id="estadoNormal" checked>
+                  <label class="form-check-label" for="estadoNormal">Normal</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="estadoProducto" id="estadoDanado">
+                  <label class="form-check-label" for="estadoDanado">Dañado</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="estadoProducto" id="estadoNoLlego">
+                  <label class="form-check-label" for="estadoNoLlego">No llegó por pedido</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Descripción (opcional)</label>
+              <textarea class="form-control login-input" rows="3" placeholder="Descripción del producto..."></textarea>
+            </div>
+
+            <div>
+              <label class="form-label">Factura del Proveedor (JPG)</label>
+              <div class="file-upload-row justify-content-between">
+                <div class="d-flex align-items-center gap-3">
+                  <button type="button" class="file-select-btn">Seleccionar archivo</button>
+                  <span class="file-status-text">Ningún archivo seleccionado</span>
+                </div>
+                <i class="bi bi-upload file-upload-icon"></i>
+              </div>
+              <p class="form-hint mt-2">Sube la foto de la factura (será convertida a PDF automáticamente)</p>
+            </div>
+
+          </div>
+
+          <button type="button" class="btn add-product-btn w-100">
+            <i class="bi bi-plus-lg"></i> Agregar Otro Producto
+          </button>
+
+        </div>
+
+        <div class="modal-footer app-modal-footer">
+          <button type="button" class="btn btn-outline-light btn-action" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-success btn-action">Guardar Productos</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Help button -->
+  <button class="help-btn">
+    <i class="bi bi-question-lg"></i>
+  </button>
+
+  <!-- Bootstrap JS bundle (solo para componentes visuales, sin lógica propia) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

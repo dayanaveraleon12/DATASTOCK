@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DataStock - Historial</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="app-wrapper">
+
+    <!-- ============ SIDEBAR ============ -->
+    <aside class="sidebar d-flex flex-column">
+
+      <!-- Brand -->
+      <div class="sidebar-brand d-flex align-items-center gap-2">
+        <div class="brand-icon">
+          <i class="bi bi-box-seam-fill"></i>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">DataStock</span>
+          <span class="brand-subtitle">v2.0 · Empresario</span>
+        </div>
+      </div>
+
+      <!-- Nav -->
+      <nav class="sidebar-nav flex-grow-1">
+
+        <div class="nav-section-title">Principal</div>
+        <ul class="nav flex-column mb-4">
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="bi bi-grid-1x2-fill"></i> Dashboard
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">
+              <i class="bi bi-box-seam-fill"></i> Inventario
+            </a>
+          </li>
+        </ul>
+
+        <div class="nav-section-title">Solicitudes</div>
+        <ul class="nav flex-column mb-4">
+          <li class="nav-item">
+            <a href="remisiones.html" class="nav-link">
+              <i class="bi bi-clipboard-check-fill"></i> Gestión Remisiones
+            </a>
+          </li>
+        </ul>
+
+        <div class="nav-section-title">Administración</div>
+        <ul class="nav flex-column mb-4">
+          <li class="nav-item">
+            <a href="usuarios.html" class="nav-link">
+              <i class="bi bi-people-fill"></i> Usuarios
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="historial.html" class="nav-link active">
+              <i class="bi bi-clock-history"></i> Historial
+              <i class="bi bi-chevron-right ms-auto link-chevron"></i>
+            </a>
+          </li>
+        </ul>
+
+        <div class="nav-section-title">Apariencia</div>
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="bi bi-palette-fill"></i> Cambiar Tema
+            </a>
+          </li>
+        </ul>
+
+      </nav>
+
+      <!-- User footer -->
+      <div class="sidebar-user d-flex align-items-center gap-2">
+        <div class="avatar">CR</div>
+        <div class="user-info">
+          <span class="user-name">Carlos Rodríguez</span>
+          <span class="user-email">empresario@datastock.com</span>
+        </div>
+        <a href="login.html" class="logout-icon"><i class="bi bi-box-arrow-right"></i></a>
+      </div>
+
+    </aside>
+
+    <!-- ============ MAIN CONTENT ============ -->
+    <div class="main-content">
+
+      <!-- Topbar -->
+      <header class="topbar d-flex align-items-center justify-content-end">
+        <div class="topbar-user d-flex align-items-center gap-2">
+          <div class="avatar">CR</div>
+          <span class="user-name">Carlos Rodríguez</span>
+          <a href="login.html" class="logout-icon ms-2"><i class="bi bi-box-arrow-right"></i></a>
+        </div>
+      </header>
+
+      <!-- Page body -->
+      <main class="page-body">
+
+        <!-- Page header -->
+        <div class="mb-4">
+          <h1 class="page-title">Historial de Modificaciones</h1>
+          <p class="page-subtitle">Registro de todas las acciones del sistema de inventario</p>
+        </div>
+
+        <!-- Stat cards -->
+        <div class="row g-3 mb-3">
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="stat-card">
+              <div class="stat-icon stat-icon-green"><i class="bi bi-plus-lg"></i></div>
+              <div>
+                <div class="stat-number">0</div>
+                <div class="stat-label">Creaciones</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="stat-card">
+              <div class="stat-icon stat-icon-blue"><i class="bi bi-pencil-fill"></i></div>
+              <div>
+                <div class="stat-number">0</div>
+                <div class="stat-label">Actualizaciones</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="stat-card">
+              <div class="stat-icon stat-icon-green"><i class="bi bi-arrow-up"></i></div>
+              <div>
+                <div class="stat-number">0</div>
+                <div class="stat-label">Stock Agregado</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="stat-card">
+              <div class="stat-icon stat-icon-orange"><i class="bi bi-arrow-down"></i></div>
+              <div>
+                <div class="stat-number">0</div>
+                <div class="stat-label">Stock Descontado</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Filtros por fecha -->
+        <div class="card panel-card mb-3">
+          <div class="card-body">
+            <p class="filter-card-header mb-3">
+              <i class="bi bi-funnel-fill"></i> Filtros por Fecha
+            </p>
+            <div class="row g-3">
+              <div class="col-12 col-md-6">
+                <label class="form-label"><i class="bi bi-calendar3 me-1"></i> Fecha Inicio</label>
+                <input type="date" class="form-control login-input">
+              </div>
+              <div class="col-12 col-md-6">
+                <label class="form-label"><i class="bi bi-calendar3 me-1"></i> Fecha Fin</label>
+                <input type="date" class="form-control login-input">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Línea de tiempo -->
+        <div class="card panel-card">
+          <div class="timeline-card-header">
+            <div class="timeline-icon"><i class="bi bi-clock-history"></i></div>
+            <span class="timeline-title">Línea de Tiempo de Cambios</span>
+          </div>
+          <div class="timeline-empty-state">
+            <i class="bi bi-clock-history timeline-empty-icon"></i>
+            <p class="timeline-empty-text">No hay cambios registrados aún</p>
+          </div>
+        </div>
+
+      </main>
+    </div>
+
+  </div>
+
+  <!-- Help button -->
+  <button class="help-btn">
+    <i class="bi bi-question-lg"></i>
+  </button>
+
+  <!-- Bootstrap JS bundle (solo para componentes visuales, sin lógica propia) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
