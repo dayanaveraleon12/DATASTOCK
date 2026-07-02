@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DataStock - Iniciar Sesión</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="login-page">
+
+  <div class="login-wrapper">
+
+    <!-- ============ LEFT PANEL ============ -->
+    <aside class="login-aside d-flex flex-column">
+
+      <!-- Brand -->
+      <div class="login-brand d-flex align-items-center gap-2">
+        <div class="brand-icon">
+          <i class="bi bi-box-seam-fill"></i>
+        </div>
+        <span class="brand-title">DataStock</span>
+      </div>
+
+      <!-- Headline -->
+      <div class="login-aside-content">
+        <h1 class="login-headline">Gestión inteligente de inventario</h1>
+        <p class="login-description">
+          Control centralizado de stock, remisiones, traslados y movimientos con trazabilidad completa.
+        </p>
+      </div>
+
+      <!-- Feature list -->
+      <ul class="login-feature-list">
+        <li><span class="feature-dot"></span> Bodega central + 4 tiendas</li>
+        <li><span class="feature-dot"></span> Remisiones con trazabilidad</li>
+        <li><span class="feature-dot"></span> Alertas automáticas de stock</li>
+        <li><span class="feature-dot"></span> Roles y permisos granulares</li>
+      </ul>
+
+    </aside>
+
+    <!-- ============ RIGHT PANEL ============ -->
+    <main class="login-main d-flex align-items-center justify-content-center">
+      <div class="login-form-box">
+
+        <h2 class="login-form-title">Iniciar sesión</h2>
+        <p class="login-form-subtitle">Ingresa tus credenciales para continuar</p>
+
+        <form>
+          <div class="mb-3">
+            <label class="form-label login-label">Correo electrónico</label>
+            <input type="email" class="form-control login-input" placeholder="correo@ejemplo.com">
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label login-label">Contraseña</label>
+            <div class="position-relative">
+              <input type="password" class="form-control login-input pe-5" value="12345678">
+              <i class="bi bi-eye password-toggle-icon"></i>
+            </div>
+          </div>
+
+          <!-- Hipervínculo a la página de Inventario -->
+          <a href="index.html" class="btn btn-success btn-login w-100">Iniciar Sesión</a>
+
+          <div class="text-center mt-3">
+            <a href="#" class="forgot-password-link">¿Olvidaste tu contraseña?</a>
+          </div>
+        </form>
+
+        <hr class="login-divider">
+
+        <p class="test-access-title">Accesos de prueba</p>
+
+        <div class="row g-2">
+          <div class="col-6">
+            <a href="index.html" class="test-access-btn">Empresario</a>
+          </div>
+          <div class="col-6">
+            <a href="index.html" class="test-access-btn">Admin</a>
+          </div>
+          <div class="col-6">
+            <a href="index.html" class="test-access-btn">Empleado 1</a>
+          </div>
+          <div class="col-6">
+            <a href="index.html" class="test-access-btn">Empleado 2</a>
+          </div>
+          <div class="col-6">
+            <a href="index.html" class="test-access-btn">Empleado 3</a>
+          </div>
+          <div class="col-6">
+            <a href="index.html" class="test-access-btn">Empleado 4</a>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+  </div>
+
+  <!-- Help button -->
+  <button class="help-btn">
+    <i class="bi bi-question-lg"></i>
+  </button>
+
+  <!-- Bootstrap JS bundle (solo para componentes visuales, sin lógica propia) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
