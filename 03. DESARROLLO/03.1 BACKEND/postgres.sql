@@ -66,6 +66,32 @@ comment on column historial_error.fecha_hora is 'Fecha y hora a la que ocurre el
 comment on column historial_error.id_cuenta is 'Id de la cuenta en la que aparece el error';
 
 
+--tabla 14 Jhon Mateus
+
+create table producto(
+    id integer not null,
+    nombre_especificacion varchar (200) not null,
+    id_categoria integer not null,
+    id_presentacion integer not null,
+    id_estado_producto integer not null,
+    id_marca integer not null,
+    constraint uk_nombre_especificacion unique (nombre_especificacion),
+    constraint pk_producto primary key (id),
+    constraint fk_marca__producto foreign key (id_marca) references marca (id),
+    constraint fk_estado_producto__producto foreign key (id_estado_producto) references estado_producto (id),
+    constraint fk_presentacion__producto foreign key (id_presentacion) references presentacion (id),
+    constraint fk_categoria__producto foreign key (id_categoria) references categoria (id)
+);
+comment on table producto is 'Especificacion del producto';
+comment on column producto.id is 'Codigo identificador del producto';
+comment on column producto.nombre_especificacion is 'Nombre exacto del producto';
+comment on column producto.id_categoria is 'Categoria a la cual corresponde el producto';
+comment on column producto.id_presentacion is 'Tipo de "presentaciones"(bulto,caja,bolsa,sachet..) del producto';
+comment on column producto.id_estado_producto is 'Identificador de las condiciones del producto';
+comment on column producto.id_marca is 'Identificador de la marca del producto';
+
+
+
 -- tabla 16 juan david
 create table producto_sitio(
     id integer not null,
