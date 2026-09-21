@@ -299,6 +299,11 @@ insert into presentacion values(8, 'Caja');
 insert into presentacion values(9, 'Bulto');
 insert into presentacion values(10, 'Sixpack');
 
+-- Insert tabla 7 estado_producto Esteban
+insert into estado_producto values(1, 'Normal');
+insert into estado_producto values(2, 'Dañado');
+insert into estado_producto values(3, 'No llego por pedido');
+
 
 --Insert tabla 11 autorizacion Jhon
 insert into autorizacion values (1, 1);
