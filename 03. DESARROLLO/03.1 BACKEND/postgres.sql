@@ -37,3 +37,17 @@ comment on table cuenta_sitio is 'Relaciona las cuentas de usuario con los sitio
 comment on column cuenta_sitio.id is 'Llave primaria sustituta de la tabla';
 comment on column cuenta_sitio.id_cuenta is 'Id de la cuenta asociada al sitio';
 comment on column cuenta_sitio.id_sitio is 'Id del sitio asociado a la cuenta';
+
+-- tabla 18 juan david
+
+create table codigo(
+    id integer not null,
+    id_estado integer not null,
+    id_cuenta_sitio integer not null,
+    fecha_remision date not null,
+    codigo varchar(255) not null,
+    constraint pk_codigo primary key (id),
+    constraint fk_estado__codigo foreign key (id_estado) references estado(id),
+    constraint fk_cuenta_sitio__codigo foreign key (id_cuenta_sitio) references cuenta_sitio(id),
+    constraint uk_codigo unique (codigo)
+);
