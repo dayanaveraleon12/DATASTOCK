@@ -51,6 +51,19 @@ COMMENT ON COLUMN motivo_salida.id is 'Id del punto de venta o sitio.';
 COMMENT ON COLUMN motivo_salida.tipo_motivo is 'Nombres de los puntos de venta y almacenamiento.';
 
 
+-- Tabla 10 estado Esteban
+create table estado(
+    id INTEGER not null,
+    nombre varchar(50) not null,
+    constraint pk_estado PRIMARY KEY(id),
+    constraint uk_estado UNIQUE(nombre)
+);
+
+COMMENT ON TABLE estado is 'Estado de remisión o traslado después de ser creado.';
+COMMENT ON COLUMN estado.id is 'Id del estado.';
+COMMENT ON COLUMN estado.nombre is 'Tipos de estado de una solicitud.';
+
+
 
 --tabla 11 Jhon Mateus
 create table autorizacion(
