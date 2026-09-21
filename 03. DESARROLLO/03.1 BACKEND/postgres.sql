@@ -58,3 +58,16 @@ comment on column codigo.id_estado is 'Id del estado actual del código de la re
 comment on column codigo.id_cuenta_sitio is 'Id de la cuenta asociada al sitio que genera la remisión';
 comment on column codigo.fecha_remision is 'Fecha en la que se genera la remisión';
 comment on column codigo.codigo is 'Código único asignado a la remisión';
+
+-- tabla 19 juan david
+create table evidencia_salida(
+    id integer not null,
+    id_cuenta integer not null,
+    archivo_excel varchar(255) not null,
+    nombre_excel varchar(255) not null,
+    fecha_carga date not null,
+    id_sitio_descarga integer not null,
+    constraint pk_evidencia_salida primary key (id),
+    constraint fk_cuenta__evidencia_salida foreign key (id_cuenta) references cuenta(id),
+    constraint fk_sitio__evidencia_salida foreign key (id_sitio_descarga) references sitio (id)
+);
