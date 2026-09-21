@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #0f172a;
+  color: #e2e8f0;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  padding-left: 240px; /* deja espacio para el sidebar fijo (Navbar) */
+}
+
+@media (max-width: 720px) {
+  body {
+    padding-left: 0;
+  }
+}

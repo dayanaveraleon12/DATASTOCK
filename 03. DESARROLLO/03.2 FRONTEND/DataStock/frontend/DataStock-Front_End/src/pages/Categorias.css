@@ -1,0 +1,278 @@
+/* ========================================================================
+   Categorias — estilos basados en el diseño de Figma (DataStock)
+   ======================================================================== */
+
+.categorias-page {
+  max-width: 960px;
+  margin: 40px auto;
+  padding: 0 24px 60px;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #f1f5f9;
+}
+
+.categorias-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.categorias-title {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 700;
+  color: #f8fafc;
+  letter-spacing: -0.01em;
+}
+
+.categorias-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 18px;
+  background: #22c55e;
+  color: #052e16;
+  font-weight: 600;
+  font-size: 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.categorias-btn-primary:hover {
+  background: #16a34a;
+}
+
+.categorias-btn-primary:active {
+  transform: translateY(1px);
+}
+
+.categorias-search {
+  width: 100%;
+  padding: 11px 14px;
+  margin-bottom: 20px;
+  background: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  color: #e2e8f0;
+  font-size: 14px;
+  box-sizing: border-box;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.categorias-search::placeholder {
+  color: #64748b;
+}
+
+.categorias-search:focus {
+  outline: none;
+  border-color: #22c55e;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.15);
+}
+
+.categorias-error {
+  padding: 10px 14px;
+  margin-bottom: 16px;
+  background: rgba(248, 113, 113, 0.1);
+  border: 1px solid rgba(248, 113, 113, 0.3);
+  border-radius: 8px;
+  color: #fca5a5;
+  font-size: 14px;
+}
+
+.categorias-loading {
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+.categorias-table-wrap {
+  background: #1e293b;
+  border: 1px solid #2d3b52;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.categorias-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.categorias-table thead tr {
+  text-align: left;
+  background: #16213a;
+  border-bottom: 1px solid #2d3b52;
+}
+
+.categorias-table th {
+  padding: 12px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #94a3b8;
+}
+
+.categorias-table td {
+  padding: 14px 16px;
+  font-size: 14px;
+  color: #e2e8f0;
+  border-bottom: 1px solid #2d3b52;
+}
+
+.categorias-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.categorias-table tbody tr:hover td {
+  background: #24324a;
+}
+
+.categorias-actions {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.categorias-btn-edit {
+  padding: 6px 12px;
+  margin-right: 8px;
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 6px;
+  color: #e2e8f0;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.categorias-btn-edit:hover {
+  background: #334155;
+  border-color: #475569;
+}
+
+.categorias-btn-delete {
+  padding: 6px 12px;
+  background: transparent;
+  border: 1px solid rgba(248, 113, 113, 0.35);
+  border-radius: 6px;
+  color: #fca5a5;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.categorias-btn-delete:hover {
+  background: rgba(248, 113, 113, 0.12);
+}
+
+.categorias-empty {
+  padding: 28px 16px;
+  text-align: center;
+  color: #64748b;
+  font-size: 14px;
+}
+
+/* Modal */
+.categorias-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(2, 6, 23, 0.65);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+
+.categorias-modal {
+  width: 360px;
+  max-width: 90vw;
+  background: #1e293b;
+  border: 1px solid #2d3b52;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.categorias-modal h3 {
+  margin: 0 0 18px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #f8fafc;
+}
+
+.categorias-field {
+  margin-bottom: 16px;
+}
+
+.categorias-field label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: #94a3b8;
+}
+
+.categorias-field input {
+  width: 100%;
+  padding: 10px 12px;
+  background: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  color: #f1f5f9;
+  font-size: 14px;
+  box-sizing: border-box;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.categorias-field input::placeholder {
+  color: #64748b;
+}
+
+.categorias-field input:focus {
+  outline: none;
+  border-color: #22c55e;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.15);
+}
+
+.categorias-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.categorias-btn-cancel {
+  padding: 9px 16px;
+  background: transparent;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  color: #cbd5e1;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.categorias-btn-cancel:hover {
+  background: #263449;
+}
+
+.categorias-btn-submit {
+  padding: 9px 18px;
+  background: #22c55e;
+  border: none;
+  border-radius: 8px;
+  color: #052e16;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.categorias-btn-submit:hover {
+  background: #16a34a;
+}
