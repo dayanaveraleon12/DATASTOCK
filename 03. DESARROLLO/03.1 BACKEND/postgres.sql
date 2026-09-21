@@ -1,5 +1,17 @@
 create extension if not exists pgcrypto;
 
+--tabla 11 Jhon Mateus
+create table autorizacion(
+    id_rol integer not null,
+    id_usuario integer not null,
+    constraint pk_autorizacion primary key (id_rol,id_usuario),
+    constraint fk_rol__autorizacion foreign key (id_rol) references rol(id),
+    constraint fk_usuario__autorizacion foreign key (id_usuario) references usuario(id)
+);
+
+comment on table autorizacion is 'permisos que tiene el usuario para modificar';
+comment on COLUMN autorizacion.id_rol is 'llave primaria Asignacion de rol al usuario';
+comment on COLUMN autorizacion.id_usuario is 'Habilitar el usuario segun corresponda el id';
 -- tabla 16 juan david
 create table producto_sitio(
     id integer not null,
