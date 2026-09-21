@@ -404,6 +404,18 @@ delete from remision where remision.cantidad_remitida = 55;
 -- A PARTIR DE AQUÍ ABAJO VAN LOS JOIN
 -- POR FAVOR, COLOCARLOS EN EL ORDEN POR PRECAUCIÓN
 
+--Inner Join de Jhon tabla 12 cuenta 
+SELECT
+    ct.primer_nombre,
+    ct.eps,
+    ct.numero_contacto_emergencia,
+    ct.nombre_contacto_emergencia,
+    ct.parentezco_contacto_emergencia,
+    us.correo_electronico
+FROM cuenta ct
+INNER JOIN usuario us ON ct.id_usuario = us.id;
+
+
 --¿Qué productos se enviaron, a qué lugares, en qué fecha y bajo qué cuenta o código de registro? juan david
 select
 c.id_cuenta_sitio,
