@@ -94,3 +94,10 @@ create table remision(
     constraint fk_codigo__remision foreign key (id_codigo) references codigo (id),
     constraint fk_sitio__remision foreign key (id_sitio_destino) references sitio (id)
 );
+
+comment on table remision is 'Registra los productos y cantidades que se envian desde la bodega hacia otro sitio';
+comment on column remision.id is 'Llave primaria sustituta de la tabla';
+comment on column remision.id_producto_sitio is 'Id del producto asociado al sitio desde donde se realiza la remisión';
+comment on column remision.id_codigo is 'Id del código asociado a la remisión';
+comment on column remision.id_sitio_destino is 'Id del sitio donde serán enviados los productos';
+comment on column remision.cantidad_remitida is 'Cantidad de productos que se envian en la remisión';
