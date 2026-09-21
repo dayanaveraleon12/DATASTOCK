@@ -90,6 +90,30 @@ comment on column producto.id_presentacion is 'Tipo de "presentaciones"(bulto,ca
 comment on column producto.id_estado_producto is 'Identificador de las condiciones del producto';
 comment on column producto.id_marca is 'Identificador de la marca del producto';
 
+--tabla 15 Jhon Mateus
+
+create table lote(
+    id integer not null,
+    id_producto integer not null,
+    fecha_ingreso date not null,
+    fecha_vencimiento date not null,
+    codigo_lote varchar (100) not null,
+    observaciones varchar (100),
+    factura_proveedor varchar (255) not null,
+    cantidad_ingresada integer not null,
+    constraint pk_lote primary key (id),
+    constraint uk_producto_codigo_lote unique (id_producto,codigo_lote),
+    constraint fk_producto__lote foreign key (id_producto) references producto (id)
+);
+comment on table lote is 'Lote del producto';
+comment on column lote.id is 'Identificador de lote del producto';
+comment on column lote.id_producto is 'Identificador del producto';
+comment on column lote.fecha_ingreso is 'Fecha en la que ingresa el lote';
+comment on column lote.fecha_vencimiento is 'Fecha en la que vence el lote';
+comment on column lote.codigo_lote is 'Codigo del lote del producto que viene marcado en el producto';
+comment on column lote.observaciones is 'observaciones si del lote del producto';
+comment on column lote.factura_proveedor is 'Factura del proveedor del lote del producto';
+comment on column lote.cantidad_ingresada is 'Cantidad de producto que viene en el lote';
 
 
 -- tabla 16 juan david
