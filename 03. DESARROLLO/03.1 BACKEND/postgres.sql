@@ -501,6 +501,10 @@ update remision set cantidad_remitida = 60 where remision.cantidad_remitida = 55
 -- A PARTIR DE AQUÍ ABAJO VAN LOS DELETE
 -- POR FAVOR, COLOCARLOS EN EL ORDEN POR PRECAUCIÓN
 
+-- Delete tabla 10 estado Esteban
+insert into estado values(4, 'jeje');
+DELETE from estado where estado.nombre = 'jeje';
+
 --Delete tabla 14 producto / Jhon
 -- Insertamos un producto temporal de prueba
 INSERT INTO producto (id, nombre_especificacion, id_categoria, id_presentacion, id_estado_producto, id_marca)
