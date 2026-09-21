@@ -25,6 +25,19 @@ COMMENT ON COLUMN estado_producto.id is 'Id del estado del producto.';
 COMMENT ON COLUMN estado_producto.tipo_estado is 'Se especifican los estados en los que podría estar un producto.';
 
 
+-- Tabla 8 sitio Esteban 
+create table sitio(
+    id integer not null,
+    nombre varchar(200) not null,
+    constraint pk_sitio PRIMARY KEY(id),
+    constraint uk_sitio UNIQUE(nombre)
+);
+
+COMMENT ON TABLE sitio is 'Puntos de venta y almacenamiento.';
+COMMENT ON COLUMN sitio.id is 'Id del punto de venta o sitio.';
+COMMENT ON COLUMN sitio.nombre is 'Nombres de los puntos de venta y almacenamiento.';
+
+
 
 --tabla 11 Jhon Mateus
 create table autorizacion(
