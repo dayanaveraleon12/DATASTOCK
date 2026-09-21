@@ -117,3 +117,16 @@ INSERT INTO producto_sitio VALUES(8, 8, 3, 8, 160);
 INSERT INTO producto_sitio VALUES(9, 9, 3, 9, 170);
 INSERT INTO producto_sitio VALUES(10, 10, 1, 10, 180);
 INSERT INTO producto_sitio VALUES(11, 1, 3, 9, 22);
+
+-- insert  tabla 17 cuenta_sitio juan david
+
+INSERT INTO cuenta_sitio VALUES(1, 1, 1);
+INSERT INTO cuenta_sitio VALUES(2, 2, 1);
+INSERT INTO cuenta_sitio VALUES(3, 2, 8);
+INSERT INTO cuenta_sitio VALUES(4, 3, 8);
+INSERT INTO cuenta_sitio VALUES(5, 4, 4);
+INSERT INTO cuenta_sitio VALUES(6, 5, 5);
+INSERT INTO cuenta_sitio VALUES(7, 5, 6);
+INSERT INTO cuenta_sitio VALUES(8, 6, 7);
+INSERT INTO cuenta_sitio VALUES(9, 7, 7);
+INSERT INTO cuenta_sitio VALUES(10, 8, 9);
