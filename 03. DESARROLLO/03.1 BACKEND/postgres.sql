@@ -487,6 +487,9 @@ INSERT INTO remision VALUES(10, 3, 2, 7, 12);
 -- A PARTIR DE AQUÍ ABAJO VAN LOS UPDATE
 -- POR FAVOR, COLOCARLOS EN EL ORDEN POR PRECAUCIÓN
 
+-- Actualizamos el nombre de un campo en la tabla sitio, columna nombre. Esteban.
+UPDATE sitio SET nombre = 'Bodega 10' WHERE id = 10;
+
 --Se actualiza el estado de observacion de un lote en la tabla 15 / Jhon
 UPDATE lote SET observaciones = 'Revisión técnica aprobada: producto apto para distribución' WHERE id = 1;
 
