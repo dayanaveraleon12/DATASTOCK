@@ -157,3 +157,16 @@ INSERT INTO evidencia_salida VALUES(8, 1, 'http', 'Tienda 2', '2022-01-23', 8);
 INSERT INTO evidencia_salida VALUES(9, 1, 'http', 'Tienda 3', '2026-02-23', 1);
 INSERT INTO evidencia_salida VALUES(10, 1, 'http', 'Tienda 8', '2025-03-05', 8);
 
+-- insert  tabla 20 remision juan david
+
+INSERT INTO remision VALUES(1, 1, 1, 9, 55);
+INSERT INTO remision VALUES(2, 2, 1, 9, 6);
+INSERT INTO remision VALUES(3, 3, 1, 9, 22);
+INSERT INTO remision VALUES(4, 5, 1, 9, 84);
+INSERT INTO remision VALUES(5, 5, 2, 5, 7);
+INSERT INTO remision VALUES(6, 5, 3, 5, 5);
+INSERT INTO remision VALUES(7, 5, 5, 2, 36);
+INSERT INTO remision VALUES(8, 4, 6, 2, 95);
+INSERT INTO remision VALUES(9, 2, 6, 1, 51);
+INSERT INTO remision VALUES(10, 3, 2, 7, 12);
+
