@@ -1,0 +1,150 @@
+{
+  "users": [
+    {
+      "correo_electronico": "random@gmail.com",
+      "contrasenia": "R123456",
+      "id": "LhA5u8C"
+    },
+    {
+      "email": "Magui@gmail.com",
+      "password": "$2a$10$Xab2o7nB9XrByRGwe9tJROXRbpf4kPkxbERDW8wS7a4qeCTQitoym",
+      "id": "LNRG4Pg"
+    },
+    {
+      "email": "esteban@gmail.com",
+      "password": "$2a$10$AtG7QBNHULiT1X1SH1OfLeunvtz8kSXZVeDwicK1vEZQYV.fkgbIe",
+      "id": "tmbpvku"
+    },
+    {
+      "email": "miguel@gmail.com",
+      "password": "$2a$10$HirX4.J298qDnSDwvioB.eAvFDaWA1vlT1wzSJyXTFmUHG6OiZ0Pm",
+      "id": "qrro1tR"
+    },
+    {
+      "email": "margarito@gmail.com",
+      "password": "$2a$10$nU5/3i11Rt0I.B/NUkpeguROPT5Q/zUx8.PgBQuDxcq493ofdOHMS",
+      "id": "q7uBeCF"
+    },
+    {
+      "email": "pepe@gmail.com",
+      "password": "$2a$10$weCBLSQz7B4NXJtKyICkfOFjeYsLEAqR8mbQjPjyrXelXuwEWqyna",
+      "id": "R-BCUS4"
+    },
+    {
+      "email": "andre@gmail.com",
+      "password": "$2a$10$rp8VicakkPi.jccARi3EYu.yzURZKWgSZLfQFonwnGNTXkOeWCUgS",
+      "id": "uDhJ4-t"
+    },
+    {
+      "email": "dayanaveraleon12@gmail.com",
+      "password": "$2a$10$kv2HnxE0fScxVm21jiKVmOb07Zdfm6Om7Pfi8PjeKzosxJzNbSUFK",
+      "id": "HRVwGKx"
+    }
+  ],
+  "tipoDocumentos": [
+    {
+      "nombre_documento": "CC",
+      "id": "1"
+    },
+    {
+      "nombre_documento": "TI",
+      "id": "2"
+    },
+    {
+      "nombre_documento": "CE",
+      "id": "3"
+    },
+    {
+      "nombre_documento": "PA",
+      "id": "4"
+    },
+    {
+      "nombre_documento": "RC",
+      "id": "5"
+    },
+    {
+      "nombre_documento": "NIT",
+      "id": "6"
+    },
+    {
+      "nombre_documento": "PEP",
+      "id": "7"
+    },
+    {
+      "nombre_documento": "PPT",
+      "id": "8"
+    },
+    {
+      "nombre_documento": "NUIP",
+      "id": "9"
+    },
+    {
+      "nombre_documento": "PPPO",
+      "id": "10"
+    }
+  ],
+  "sitios": [
+    {
+      "nombre": "Tienda 1",
+      "id": "jyBHW-I"
+    },
+    {
+      "nombre": "Tienda 2",
+      "id": "7P50GXe"
+    }
+  ],
+  "categorias": [
+    {
+      "id": "3",
+      "nombre": "Granos"
+    },
+    {
+      "id": "4",
+      "nombre": "Bebidas"
+    },
+    {
+      "id": "5",
+      "nombre": "Cuidado personal"
+    },
+    {
+      "id": "6",
+      "nombre": "Aseo Hogar"
+    },
+    {
+      "id": "7",
+      "nombre": "Jabones"
+    },
+    {
+      "id": "8",
+      "nombre": "Alcohol"
+    },
+    {
+      "id": "9",
+      "nombre": "Dulces"
+    },
+    {
+      "id": "10",
+      "nombre": "Harinas"
+    },
+    {
+      "nombre": "Cereales",
+      "id": "0iifrTr"
+    }
+  ],
+  "presentaciones": [
+    {
+      "nombre": "Bolsa",
+      "id": "NehaRcp"
+    }
+  ],
+  "marcas": [
+    {
+      "nombre": "Diana",
+      "id": "DLeyHGs"
+    },
+    {
+      "nombre": "Roa",
+      "id": "uI2PQzl"
+    }
+  ]
+}
