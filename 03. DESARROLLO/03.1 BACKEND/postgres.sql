@@ -12,6 +12,19 @@ COMMENT ON TABLE presentacion is 'Presentación en la que está empacado el prod
 COMMENT ON COLUMN presentacion.id is 'Id de la tabla presentación.';
 COMMENT ON COLUMN presentacion.tipo_presentacion is 'Se especifica cual es el tipo de presentación del producto.';
 
+-- Tabla 7 estado_producto Esteban
+create table estado_producto(
+    id integer not null,
+    tipo_estado varchar(50) not null,
+    constraint pk_estado_producto PRIMARY KEY(id),
+    constraint uk_estado_producto UNIQUE(tipo_estado)
+);
+
+COMMENT ON TABLE estado_producto is 'Estado en el que se recibe o entrega un producto.';
+COMMENT ON COLUMN estado_producto.id is 'Id del estado del producto.';
+COMMENT ON COLUMN estado_producto.tipo_estado is 'Se especifican los estados en los que podría estar un producto.';
+
+
 
 --tabla 11 Jhon Mateus
 create table autorizacion(
