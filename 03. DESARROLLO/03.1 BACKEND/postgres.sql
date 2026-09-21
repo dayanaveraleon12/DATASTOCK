@@ -262,6 +262,26 @@ INSERT INTO cuenta(
 (9,  9,  5, '80123456',   'Felipe',    NULL,        'Ortiz',     'Jiménez',   '3136789012', 'Famisanar',    '3198765432', 'Elena Jiménez',     'Hermana'),
 (10, 10, 1, '1026589412', 'Mariana',   'Lucía',     'Cruz',      'Navarro',   '3157890123', 'Compensar',    '3223456789', 'Fernando Cruz',     'Padre');
 
+--Insert tabla 13 historial error Jhon
+INSERT INTO historial_error (
+    id,
+    nombre_error,
+    mensaje,
+    fecha_hora,
+    id_cuenta
+) VALUES
+(1,  'AuthenticationFailedException', 'Credenciales de acceso inválidas o usuario bloqueado',                '2026-06-15 08:30:12', 1),
+(2,  'NullPointerException',          'Intento de acceso a un objeto no inicializado en el módulo de pagos',  '2026-06-15 09:14:45', 2),
+(3,  'SQLException',                  'Violación de restricción de clave foránea al actualizar saldo',        '2026-06-16 11:05:20', 3),
+(4,  'TimeoutException',              'Tiempo de espera agotado al conectar con el servidor externo',         '2026-06-16 14:22:01', 1),
+(5,  'UnauthorizedAccessException',   'La cuenta no tiene permisos suficientes para ejecutar la acción',      '2026-06-17 10:11:33', 4),
+(6,  'DataValidationException',       'El formato del correo electrónico proporcionado no es válido',        '2026-06-17 16:45:50', 2),
+(7,  'HttpHostConnectException',      'Error al intentar conectar con la pasarela de pagos',                 '2026-06-18 12:00:15', 5),
+(8,  'DuplicateKeyException',         'El número de documento ya se encuentra registrado en el sistema',     '2026-06-19 15:30:40', 3),
+(9,  'SessionExpiredException',       'La sesión del usuario ha expirado por inactividad',                    '2026-06-20 18:02:11', 4),
+(10, 'InternalServerError',           'Fallo inesperado al procesar la solicitud del reporte mensual',        '2026-06-20 20:10:05', 5);
+
+
 
 -- insert  tabla 16 producto_sitio juan david
 
