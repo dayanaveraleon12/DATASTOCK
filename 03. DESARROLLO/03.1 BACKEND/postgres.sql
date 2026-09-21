@@ -71,3 +71,11 @@ create table evidencia_salida(
     constraint fk_cuenta__evidencia_salida foreign key (id_cuenta) references cuenta(id),
     constraint fk_sitio__evidencia_salida foreign key (id_sitio_descarga) references sitio (id)
 );
+
+comment on table evidencia_salida is 'Registra las evidencias en archivos Excel asociadas a las salidas de productos';
+comment on column evidencia_salida.id is 'Llave primaria sustituta de la tabla';
+comment on column evidencia_salida.id_cuenta is 'Id de la cuenta que registra la evidencia de salida';
+comment on column evidencia_salida.archivo_excel is 'Ruta o direccion del archivo Excel que contiene la evidencia';
+comment on column evidencia_salida.nombre_excel is 'Nombre del archivo Excel utilizado como evidencia';
+comment on column evidencia_salida.fecha_carga is 'Fecha en la que se carga la evidencia';
+comment on column evidencia_salida.id_sitio_descarga is 'Id del sitio donde se realiza la descarga de los productos';
