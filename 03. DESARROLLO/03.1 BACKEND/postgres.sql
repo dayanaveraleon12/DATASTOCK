@@ -9,6 +9,42 @@ create table autorizacion(
     constraint fk_usuario__autorizacion foreign key (id_usuario) references usuario(id)
 );
 
+-- tabla 12 Jhon Mateus 
+create table cuenta(
+    id integer not null,
+    id_usuario integer not null,
+    id_tipo_documento integer not null,
+    numero_documento varchar (10) not null,
+    primer_nombre varchar (20) not null,
+    segundo_nombre varchar (20),
+    primer_apellido varchar (20) not null,
+    segundo_apellido varchar (20),
+    numero_celular varchar (20) not null,
+    eps varchar (30) not null,
+    numero_contacto_emergencia varchar (20) not null,
+    nombre_contacto_emergencia varchar (20) not null,
+    parentezco_contacto_emergencia varchar (20) not null,
+    constraint uk_id_usuario unique (id_usuario),
+    constraint uk_documento unique (id_tipo_documento,numero_documento),
+    constraint pk_cuenta primary key (id),
+    constraint fk_tipo_documento__producto foreign key (id_tipo_documento) references tipo_documento (id),
+    constraint fk_usuario__producto foreign key (id_usuario) references usuario (id)  
+);
+comment on table cuenta is 'Datos del usuario';
+comment on COLUMN cuenta.id is 'Id cuenta';
+comment on column cuenta.id_tipo_documento is 'Id del tipo de documento';
+comment on column cuenta.numero_documento is 'Numero de documento';
+comment on column cuenta.primer_nombre is 'Ingreso de primer nombre';
+comment on column cuenta.segundo_nombre is 'Ingreso segundo nombre opcional';
+comment on column cuenta.primer_apellido is 'Ingreso de primer apellido';
+comment on column cuenta.segundo_apellido is 'Ingreso de segundo apellido opcional';
+comment on column cuenta.numero_celular is 'Ingreso de numero de contacto';
+comment on column cuenta.eps is 'Ingreso de eps en la que esta vinculado el usuario';
+comment on column cuenta.numero_contacto_emergencia is 'Ingreso de numero de contacto en caso de emergencia';
+comment on column cuenta.nombre_contacto_emergencia is 'Ingreso de nombre de la persona de contacto en caso de emergencia';
+comment on column cuenta.parentezco_contacto_emergencia is 'Ingreso de tipo de parentezco del contacto de emergencia con el usuario';
+
+
 comment on table autorizacion is 'permisos que tiene el usuario para modificar';
 comment on COLUMN autorizacion.id_rol is 'llave primaria Asignacion de rol al usuario';
 comment on COLUMN autorizacion.id_usuario is 'Habilitar el usuario segun corresponda el id';
