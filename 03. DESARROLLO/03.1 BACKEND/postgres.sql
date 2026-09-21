@@ -46,6 +46,11 @@ create table motivo_salida(
     constraint uk_motivo_salida UNIQUE(tipo_motivo)
 );
 
+COMMENT ON TABLE motivo_salida is 'Puntos de venta y almacenamiento.';
+COMMENT ON COLUMN motivo_salida.id is 'Id del punto de venta o sitio.';
+COMMENT ON COLUMN motivo_salida.tipo_motivo is 'Nombres de los puntos de venta y almacenamiento.';
+
+
 
 --tabla 11 Jhon Mateus
 create table autorizacion(
