@@ -325,6 +325,11 @@ insert into motivo_salida values(5, 'Consumo Interno');
 insert into motivo_salida values(6, 'Devuelto a Proveedor');
 insert into motivo_salida values(7, 'Venta');
 
+-- Insert tabla 10 estado
+insert into estado values(1, 'Aceptada');
+insert into estado values(2, 'Rechazada');
+insert into estado values(3, 'Pendiente');
+
 
 --Insert tabla 11 autorizacion Jhon
 insert into autorizacion values (1, 1);
