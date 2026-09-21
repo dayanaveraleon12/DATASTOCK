@@ -187,3 +187,16 @@ delete from remision where remision.cantidad_remitida = 55;
 
 -- A PARTIR DE AQUÍ ABAJO VAN LOS JOIN
 -- POR FAVOR, COLOCARLOS EN EL ORDEN POR PRECAUCIÓN
+
+--¿Qué productos se enviaron, a qué lugares, en qué fecha y bajo qué cuenta o código de registro? juan david
+select
+c.id_cuenta_sitio,
+c.fecha_remision,
+ps.id_producto,
+ps.id_sitio
+FROM
+remision r
+inner join codigo c on
+c.id_cuenta_sitio= r.id
+inner join producto_sitio ps ON
+ps.id = r.id_producto_sitio;
