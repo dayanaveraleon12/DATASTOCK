@@ -281,7 +281,19 @@ INSERT INTO historial_error (
 (9,  'SessionExpiredException',       'La sesión del usuario ha expirado por inactividad',                    '2026-06-20 18:02:11', 4),
 (10, 'InternalServerError',           'Fallo inesperado al procesar la solicitud del reporte mensual',        '2026-06-20 20:10:05', 5);
 
+-- Insert tabla 14 producto Jhon
 
+INSERT INTO producto (id, nombre_especificacion, id_categoria, id_presentacion, id_estado_producto, id_marca) VALUES
+(1,  'Leche Entera Alqueria 1100ml',         1,  3, 1, 1),   -- Lácteos / Bolsa / Normal / Alquería
+(2,  'Chocorramo Tradicional 65g',           9,  2, 1, 2),   -- Dulces / Paquete / Normal / Ramo
+(3,  'Queso Campesino Colanta 500g',         1,  2, 1, 3),   -- Lácteos / Paquete / Normal / Colanta
+(4,  'Arroz Blanco Diana  1000g',            3,  3, 1, 4),   -- Granos / Bolsa / Normal / Diana
+(5,  'Galletas Festival Vainilla 403g',      9,  2, 1, 5),   -- Dulces / Paquete / Normal / Nutresa
+(6,  'Yogurt Fresa Alpina 1000g',            1,  4, 1, 6),   -- Lácteos / Botella / Normal / Alpina
+(7,  'Pan Blanco Familiar Bimbo 600g',       10, 2, 1, 7),   -- Harinas / Paquete / Normal / Bimbo
+(8,  'Gaseosa Manzana Postobon 1.5L',        4,  4, 1, 8),   -- Bebidas / Botella / Normal / Postobón
+(9,  'Gaseosa CocaCola Original 400ml',      4,  5, 1, 9),   -- Bebidas / Lata / Normal / CocaCola
+(10, 'Detergente en Polvo Ariel 2kg',        6,  3, 1, 10);  -- Aseo hogar / Bolsa / Normal / Ariel
 
 -- insert  tabla 16 producto_sitio juan david
 
