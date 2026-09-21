@@ -200,3 +200,7 @@ inner join codigo c on
 c.id_cuenta_sitio= r.id
 inner join producto_sitio ps ON
 ps.id = r.id_producto_sitio;
+
+
+-- A PARTIR DE AQUÍ ABAJO VAN LAS CONSULTAS Y SUBCONSULTAS
+-- POR FAVOR, COLOCARLOS EN EL ORDEN POR PRECAUCIÓN 
