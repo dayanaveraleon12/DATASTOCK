@@ -222,6 +222,18 @@ comment on column remision.cantidad_remitida is 'Cantidad de productos que se en
 -- A PARTIR DE AQUÍ ABAJO VAN LOS INSERT DE LAS TABLAS
 -- DEBEN IR EN ORDEN YA QUE TAMBIÉN LOS DATOS DEPENDEN LOS UNOS DE LOS OTROS.
 
+--Insert tabla 11 autorizacion Jhon
+insert into autorizacion values (1, 1);
+insert into autorizacion values (2, 2);
+insert into autorizacion values (3, 3);
+insert into autorizacion values (3, 4);
+insert into autorizacion values (3, 5);
+insert into autorizacion values (3, 6);
+insert into autorizacion values (3, 7);
+insert into autorizacion values (4, 8);
+insert into autorizacion values (4, 9);
+insert into autorizacion values (4, 10);
+
 -- insert  tabla 16 producto_sitio juan david
 
 INSERT INTO producto_sitio VALUES(1, 1, 1, 1, 100);
