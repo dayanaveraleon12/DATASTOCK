@@ -234,6 +234,35 @@ insert into autorizacion values (4, 8);
 insert into autorizacion values (4, 9);
 insert into autorizacion values (4, 10);
 
+--Insert tabla 12 cuenta Jhon
+
+INSERT INTO cuenta(
+    id,
+    id_usuario,
+    id_tipo_documento,
+    numero_documento,
+    primer_nombre,
+    segundo_nombre,
+    primer_apellido,
+    segundo_apellido,
+    numero_celular,
+    eps,
+    numero_contacto_emergencia,
+    nombre_contacto_emergencia,
+    parentezco_contacto_emergencia
+) VALUES
+(1,  1,  1, '1014238945', 'Carlos',    'Eduardo',   'Ramírez',   'Gómez',     '3104567890', 'Famisanar',    '3158901234', 'Martha Gómez',      'Madre'),
+(2,  2,  2, '80462621',   'Andrea',    'Paola',     'Martínez',  'Rodríguez', '3207891234', 'Sura',         '3112345678', 'Jorge Martínez',    'Padre'),
+(3,  3,  3, '1032489012', 'Mateo',     NULL,        'Vargas',    'Castro',    '3145678901', 'Sanitas',      '3176543210', 'Lucía Castro',      'Madre'),
+(4,  4,  4, '52890432',   'Valentina', 'Sofía',     'López',     'Mendoza',   '3001234567', 'Compensar',    '3189012345', 'Pedro López',       'Hermano'),
+(5,  5,  5, '1098765432', 'Juan',      'David',     'Herrera',   'Torres',    '3123456789', 'Salud Total',  '3167890123', 'Gloria Torres',     'Madre'),
+(6,  6,  2, '79845123',   'Daniela',   NULL,        'Pérez',     'Morales',   '3162345678', 'Nueva EPS',    '3109876543', 'Andrés Pérez',      'Cónyuge'),
+(7,  7,  3, '1018456789', 'Santiago',  'Andrés',    'García',    'Rojas',     '3184567892', 'Sura',         '3212858368', 'Patricia Rojas',    'Madre'),
+(8,  8,  4, '1020478951', 'Camila',    'Alejandra', 'Silva',     'Díaz',      '3178901235', 'Sanitas',      '3134567890', 'Roberto Silva',     'Padre'),
+(9,  9,  5, '80123456',   'Felipe',    NULL,        'Ortiz',     'Jiménez',   '3136789012', 'Famisanar',    '3198765432', 'Elena Jiménez',     'Hermana'),
+(10, 10, 1, '1026589412', 'Mariana',   'Lucía',     'Cruz',      'Navarro',   '3157890123', 'Compensar',    '3223456789', 'Fernando Cruz',     'Padre');
+
+
 -- insert  tabla 16 producto_sitio juan david
 
 INSERT INTO producto_sitio VALUES(1, 1, 1, 1, 100);
