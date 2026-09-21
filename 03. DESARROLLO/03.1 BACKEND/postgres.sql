@@ -578,6 +578,12 @@ AND ps.id IN (
     FROM remision r
 );
 
+-- Vamos a ver los nombres de los productos junto con su tipo de presentacion siempre y cuando su presentación empiece por la letra "a".  
+select nombre_especificacion 
+from producto 
+where producto.id_presentacion in 
+(select id from presentacion where tipo_presentacion ilike 'b%');
+
 
 --Consulta y subconsulta de Lote tabla 15 Jhon
 
