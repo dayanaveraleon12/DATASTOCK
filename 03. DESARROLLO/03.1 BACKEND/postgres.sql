@@ -304,6 +304,18 @@ insert into estado_producto values(1, 'Normal');
 insert into estado_producto values(2, 'Dañado');
 insert into estado_producto values(3, 'No llego por pedido');
 
+-- Insert tabla 8 sitio Esteban
+insert into sitio values(1, 'Bodega 1');
+insert into sitio values(2, 'Tienda 1');
+insert into sitio values(3, 'Tienda 2');
+insert into sitio values(4, 'Tienda 3');
+insert into sitio values(5, 'Tienda 4');
+insert into sitio values(6, 'Tienda 5');
+insert into sitio values(7, 'Tienda 6');
+insert into sitio values(8, 'Bodega 2');
+insert into sitio values(9, 'Tienda 7');
+insert into sitio values(10, 'Tienda 8');
+
 
 --Insert tabla 11 autorizacion Jhon
 insert into autorizacion values (1, 1);
