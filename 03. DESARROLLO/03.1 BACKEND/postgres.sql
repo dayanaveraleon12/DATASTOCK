@@ -143,3 +143,17 @@ INSERT INTO codigo VALUES(7, 3, 6, '2025-12-20', 754);
 INSERT INTO codigo VALUES(8, 1, 8, '2025-12-20', 6555);
 INSERT INTO codigo VALUES(9, 2, 5, '2025-12-20', 323);
 INSERT INTO codigo VALUES(10, 3, 5, '2025-12-20', 51);
+
+-- insert  tabla 19 evidencia_salida juan david
+
+INSERT INTO evidencia_salida VALUES(1, 1, 'http', 'Tienda 1', '2025-12-01', 1);
+INSERT INTO evidencia_salida VALUES(2, 1, 'http', 'Tienda 6', '2024-09-23', 8);
+INSERT INTO evidencia_salida VALUES(3, 10, 'http', 'Tienda 8', '2025-02-02', 8);
+INSERT INTO evidencia_salida VALUES(4, 1, 'http', 'Tienda 5', '2021-03-29', 8);
+INSERT INTO evidencia_salida VALUES(5, 1, 'http', 'Tienda 1', '2025-07-21', 1);
+INSERT INTO evidencia_salida VALUES(6, 1, 'http', 'Tienda 7', '2025-05-23', 1);
+INSERT INTO evidencia_salida VALUES(7, 10, 'http', 'Tienda 7', '2025-08-30', 1);
+INSERT INTO evidencia_salida VALUES(8, 1, 'http', 'Tienda 2', '2022-01-23', 8);
+INSERT INTO evidencia_salida VALUES(9, 1, 'http', 'Tienda 3', '2026-02-23', 1);
+INSERT INTO evidencia_salida VALUES(10, 1, 'http', 'Tienda 8', '2025-03-05', 8);
+
