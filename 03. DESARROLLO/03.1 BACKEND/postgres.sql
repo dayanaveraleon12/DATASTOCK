@@ -20,3 +20,15 @@ comment on column producto_sitio.id_producto is 'Id del producto asociado al sit
 comment on column producto_sitio.id_sitio is 'Id del sitio donde se encuentra el producto';
 comment on column producto_sitio.id_lote is 'Id del lote al que pertenece el producto';
 comment on column producto_sitio.cantidad_sitio is 'Cantidad disponible del producto en el sitio';
+
+
+-- tabla 17 juan david
+
+create table cuenta_sitio(
+    id INTEGER not null,
+    id_cuenta integer not null,
+    id_sitio integer not null,
+    constraint pk_cuenta_sitio primary key(id),
+    constraint fk_cuenta__cuenta_sitio foreign key (id_cuenta) REFERENCES cuenta(id),
+    constraint fk_sitio__cuenta_sitio foreign key (id_sitio) REFERENCES sitio(id)
+);
