@@ -38,6 +38,14 @@ COMMENT ON COLUMN sitio.id is 'Id del punto de venta o sitio.';
 COMMENT ON COLUMN sitio.nombre is 'Nombres de los puntos de venta y almacenamiento.';
 
 
+-- Tabla 9 motivo_salida Esteban
+create table motivo_salida(
+    id integer not null,
+    tipo_motivo varchar(150) not null,
+    constraint pk_motivo_salida PRIMARY KEY(id),
+    constraint uk_motivo_salida UNIQUE(tipo_motivo)
+);
+
 
 --tabla 11 Jhon Mateus
 create table autorizacion(
