@@ -101,3 +101,19 @@ comment on column remision.id_producto_sitio is 'Id del producto asociado al sit
 comment on column remision.id_codigo is 'Id del código asociado a la remisión';
 comment on column remision.id_sitio_destino is 'Id del sitio donde serán enviados los productos';
 comment on column remision.cantidad_remitida is 'Cantidad de productos que se envian en la remisión';
+
+
+
+-- insert  tabla 16 producto_sitio juan david
+
+INSERT INTO producto_sitio VALUES(1, 1, 1, 1, 100);
+INSERT INTO producto_sitio VALUES(2, 2, 2, 2, 90);
+INSERT INTO producto_sitio VALUES(3, 3, 3, 3, 110);
+INSERT INTO producto_sitio VALUES(4, 4, 2, 4, 120);
+INSERT INTO producto_sitio VALUES(5, 5, 2, 5, 130);
+INSERT INTO producto_sitio VALUES(6, 6, 2, 6, 140);
+INSERT INTO producto_sitio VALUES(7, 7, 1, 7, 150);
+INSERT INTO producto_sitio VALUES(8, 8, 3, 8, 160);
+INSERT INTO producto_sitio VALUES(9, 9, 3, 9, 170);
+INSERT INTO producto_sitio VALUES(10, 10, 1, 10, 180);
+INSERT INTO producto_sitio VALUES(11, 1, 3, 9, 22);
