@@ -13,3 +13,10 @@ create table producto_sitio(
     constraint fk_lote__producto_sitio FOREIGN key (id_lote) references lote(id),
     constraint uk_producto_sitio UNIQUE(id_producto, id_sitio, id_lote)
 );
+
+comment on table producto_sitio is 'Registra los productos disponibles en cada sitio y lote para el control del inventario';
+comment on column producto_sitio.id is 'Llave primaria sustituta de la tabla';
+comment on column producto_sitio.id_producto is 'Id del producto asociado al sitio';
+comment on column producto_sitio.id_sitio is 'Id del sitio donde se encuentra el producto';
+comment on column producto_sitio.id_lote is 'Id del lote al que pertenece el producto';
+comment on column producto_sitio.cantidad_sitio is 'Cantidad disponible del producto en el sitio';
