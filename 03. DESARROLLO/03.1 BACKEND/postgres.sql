@@ -103,6 +103,8 @@ comment on column remision.id_sitio_destino is 'Id del sitio donde serán enviad
 comment on column remision.cantidad_remitida is 'Cantidad de productos que se envian en la remisión';
 
 
+-- A PARTIR DE AQUÍ ABAJO VAN LOS INSERT DE LAS TABLAS
+-- DEBEN IR EN ORDEN YA QUE TAMBIÉN LOS DATOS DEPENDEN LOS UNOS DE LOS OTROS.
 
 -- insert  tabla 16 producto_sitio juan david
 
