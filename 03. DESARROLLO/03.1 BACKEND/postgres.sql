@@ -8,6 +8,10 @@ create table autorizacion(
     constraint fk_rol__autorizacion foreign key (id_rol) references rol(id),
     constraint fk_usuario__autorizacion foreign key (id_usuario) references usuario(id)
 );
+comment on table autorizacion is 'permisos que tiene el usuario para modificar';
+comment on COLUMN autorizacion.id_rol is 'llave primaria Asignacion de rol al usuario';
+comment on COLUMN autorizacion.id_usuario is 'Habilitar el usuario segun corresponda el id';
+
 
 -- tabla 12 Jhon Mateus 
 create table cuenta(
@@ -44,10 +48,24 @@ comment on column cuenta.numero_contacto_emergencia is 'Ingreso de numero de con
 comment on column cuenta.nombre_contacto_emergencia is 'Ingreso de nombre de la persona de contacto en caso de emergencia';
 comment on column cuenta.parentezco_contacto_emergencia is 'Ingreso de tipo de parentezco del contacto de emergencia con el usuario';
 
+--tabla 13 Jhon Mateus
+create table  historial_error(
+    id integer not null,
+    nombre_error varchar (150) not null,
+    mensaje varchar (255) not null,
+    fecha_hora timestamp not null,
+    id_cuenta integer not null,
+    constraint pk_historial_error primary key (id),
+    constraint fk_cuenta__historial_error foreign key (id_cuenta) references cuenta (id)
+);
+comment on table historial_error is 'Guardar errores que ocurran en el sistema';
+comment on column historial_error.id is 'Identificador de error';
+comment on column historial_error.nombre_error is 'Nombre para el error que sucedio en el sistema';
+comment on column historial_error.mensaje is 'Mensaje que sale de acuerdo al codigo de error';
+comment on column historial_error.fecha_hora is 'Fecha y hora a la que ocurre el error';
+comment on column historial_error.id_cuenta is 'Id de la cuenta en la que aparece el error';
 
-comment on table autorizacion is 'permisos que tiene el usuario para modificar';
-comment on COLUMN autorizacion.id_rol is 'llave primaria Asignacion de rol al usuario';
-comment on COLUMN autorizacion.id_usuario is 'Habilitar el usuario segun corresponda el id';
+
 -- tabla 16 juan david
 create table producto_sitio(
     id integer not null,
