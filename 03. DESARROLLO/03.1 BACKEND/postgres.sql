@@ -295,6 +295,20 @@ INSERT INTO producto (id, nombre_especificacion, id_categoria, id_presentacion, 
 (9,  'Gaseosa CocaCola Original 400ml',      4,  5, 1, 9),   -- Bebidas / Lata / Normal / CocaCola
 (10, 'Detergente en Polvo Ariel 2kg',        6,  3, 1, 10);  -- Aseo hogar / Bolsa / Normal / Ariel
 
+-- Insert tabla 15 lote Jhon
+
+INSERT INTO lote (id, id_producto, fecha_ingreso, fecha_vencimiento, codigo_lote, observaciones, factura_proveedor, cantidad_ingresada) VALUES
+(1,  1,  '2026-01-10', '2026-04-10', 'LOT-ALQ-001', 'Llegó en óptimas condiciones de frío', 'FAC-PROV-9011', 200),
+(2,  2,  '2026-01-15', '2026-06-30', 'LOT-RAM-002', 'Empaque sellado y completo',           'FAC-PROV-9012', 150),
+(3,  3,  '2026-02-01', '2026-05-15', 'LOT-COL-003', 'Refrigeración verificada',             'FAC-PROV-9013', 180),
+(4,  4,  '2026-02-05', '2027-02-05', 'LOT-DIA-004', 'Almacenado sobre estibas',             'FAC-PROV-9014', 300),
+(5,  5,  '2026-02-10', '2026-11-20', 'LOT-NUT-005', 'Cajas sin averías',                    'FAC-PROV-9015', 250),
+(6,  6,  '2026-02-12', '2026-05-01', 'LOT-ALP-006', 'Cadena de frío controlada',            'FAC-PROV-9016', 220),
+(7,  7,  '2026-02-15', '2026-03-30', 'LOT-BIM-007', 'Fecha corta de rotación rápida',       'FAC-PROV-9017', 190),
+(8,  8,  '2026-03-01', '2026-12-31', 'LOT-POS-008', 'Estibas completas de botellas',        'FAC-PROV-9018', 210),
+(9,  9,  '2026-03-05', '2027-01-15', 'LOT-COC-009', 'Lote de latas perfecto',               'FAC-PROV-9019', 240),
+(10, 10, '2026-03-10', '2028-03-10', 'LOT-ARI-010', 'Bolsas selladas de detergente',        'FAC-PROV-9020', 260);
+
 -- insert  tabla 16 producto_sitio juan david
 
 INSERT INTO producto_sitio VALUES(1, 1, 1, 1, 100);
