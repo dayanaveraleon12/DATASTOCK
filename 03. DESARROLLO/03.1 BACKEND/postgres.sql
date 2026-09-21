@@ -444,3 +444,18 @@ AND ps.id IN (
     SELECT r.id_producto_sitio
     FROM remision r
 );
+
+
+--Consulta y subconsulta de Lote tabla 15 Jhon
+
+
+SELECT  -- Queremos ver éstas columnas de la tabla Lote, solo cuando la llave foránea de lote coincida con la llave primaria de producto. 
+    l.id AS id_lote,
+    l.id_producto,
+    l.codigo_lote,
+    l.fecha_ingreso
+FROM lote l
+WHERE l.id_producto IN (
+    SELECT p.id
+    FROM producto p
+);
