@@ -378,6 +378,9 @@ INSERT INTO remision VALUES(10, 3, 2, 7, 12);
 -- A PARTIR DE AQUÍ ABAJO VAN LOS UPDATE
 -- POR FAVOR, COLOCARLOS EN EL ORDEN POR PRECAUCIÓN
 
+--Se actualiza el estado de observacion de un lote en la tabla 15 / Jhon
+UPDATE lote SET observaciones = 'Revisión técnica aprobada: producto apto para distribución' WHERE id = 1;
+
 --se cambia/actualiza el valor de "55" por el "60" en la tabla "20" juan david
 update remision set cantidad_remitida = 60 where remision.cantidad_remitida = 55;
 
