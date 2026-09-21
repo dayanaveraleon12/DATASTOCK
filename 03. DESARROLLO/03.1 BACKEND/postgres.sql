@@ -204,3 +204,15 @@ ps.id = r.id_producto_sitio;
 
 -- A PARTIR DE AQUÍ ABAJO VAN LAS CONSULTAS Y SUBCONSULTAS
 -- POR FAVOR, COLOCARLOS EN EL ORDEN POR PRECAUCIÓN 
+
+--¿Qué productos tienen existencias en los sitios y además han sido solicitados mediante una remisión? tabla producto_sitio y remision juan david
+SELECT
+    ps.id_producto,
+    ps.id_sitio,
+    ps.cantidad_sitio
+FROM producto_sitio ps
+WHERE ps.cantidad_sitio > 0
+AND ps.id IN (
+    SELECT r.id_producto_sitio
+    FROM remision r
+);
