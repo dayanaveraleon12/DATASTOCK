@@ -316,6 +316,15 @@ insert into sitio values(8, 'Bodega 2');
 insert into sitio values(9, 'Tienda 7');
 insert into sitio values(10, 'Tienda 8');
 
+-- Insert tabla 9 motivo_salida
+insert into motivo_salida values(1, 'Daño');
+insert into motivo_salida values(2, 'Robo');
+insert into motivo_salida values(3, 'Rotura');
+insert into motivo_salida values(4, 'Vencimiento');
+insert into motivo_salida values(5, 'Consumo Interno');
+insert into motivo_salida values(6, 'Devuelto a Proveedor');
+insert into motivo_salida values(7, 'Venta');
+
 
 --Insert tabla 11 autorizacion Jhon
 insert into autorizacion values (1, 1);
