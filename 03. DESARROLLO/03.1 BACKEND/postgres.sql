@@ -1,5 +1,18 @@
 create extension if not exists pgcrypto;
 
+-- Tabla 6 presentacion Esteban
+create table presentacion(
+    id integer not null,
+    tipo_presentacion varchar(50) not null, 
+    constraint pk_presentacion primary key(id),
+    constraint uk_presentacion UNIQUE(tipo_presentacion)
+);
+
+COMMENT ON TABLE presentacion is 'Presentación en la que está empacado el producto.';
+COMMENT ON COLUMN presentacion.id is 'Id de la tabla presentación.';
+COMMENT ON COLUMN presentacion.tipo_presentacion is 'Se especifica cual es el tipo de presentación del producto.';
+
+
 --tabla 11 Jhon Mateus
 create table autorizacion(
     id_rol integer not null,
