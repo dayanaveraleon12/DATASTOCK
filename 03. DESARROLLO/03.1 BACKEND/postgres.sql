@@ -287,6 +287,19 @@ comment on column remision.cantidad_remitida is 'Cantidad de productos que se en
 -- A PARTIR DE AQUÍ ABAJO VAN LOS INSERT DE LAS TABLAS
 -- DEBEN IR EN ORDEN YA QUE TAMBIÉN LOS DATOS DEPENDEN LOS UNOS DE LOS OTROS.
 
+-- Insert tabla 6 presentación Esteban
+insert into presentacion values(1, 'Unidad');
+insert into presentacion values(2, 'Paquete');
+insert into presentacion values(3, 'Bolsa');
+insert into presentacion values(4, 'Botella');
+insert into presentacion values(5, 'Lata');
+insert into presentacion values(6, 'Vaso');
+insert into presentacion values(7, 'Aerosol');
+insert into presentacion values(8, 'Caja');
+insert into presentacion values(9, 'Bulto');
+insert into presentacion values(10, 'Sixpack');
+
+
 --Insert tabla 11 autorizacion Jhon
 insert into autorizacion values (1, 1);
 insert into autorizacion values (2, 2);
