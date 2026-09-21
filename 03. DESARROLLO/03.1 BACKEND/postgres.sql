@@ -79,3 +79,18 @@ comment on column evidencia_salida.archivo_excel is 'Ruta o direccion del archiv
 comment on column evidencia_salida.nombre_excel is 'Nombre del archivo Excel utilizado como evidencia';
 comment on column evidencia_salida.fecha_carga is 'Fecha en la que se carga la evidencia';
 comment on column evidencia_salida.id_sitio_descarga is 'Id del sitio donde se realiza la descarga de los productos';
+
+
+-- tabla 20 juan david
+
+create table remision(
+    id integer not null,
+    id_producto_sitio integer not null,
+    id_codigo integer not null,
+    id_sitio_destino integer not null,
+    cantidad_remitida integer not null,
+    constraint pk_remision primary key (id),
+    constraint fk_producto_sitio__remision foreign key (id_producto_sitio) references producto_sitio (id),
+    constraint fk_codigo__remision foreign key (id_codigo) references codigo (id),
+    constraint fk_sitio__remision foreign key (id_sitio_destino) references sitio (id)
+);
