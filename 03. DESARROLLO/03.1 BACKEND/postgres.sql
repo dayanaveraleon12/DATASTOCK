@@ -130,3 +130,16 @@ INSERT INTO cuenta_sitio VALUES(7, 5, 6);
 INSERT INTO cuenta_sitio VALUES(8, 6, 7);
 INSERT INTO cuenta_sitio VALUES(9, 7, 7);
 INSERT INTO cuenta_sitio VALUES(10, 8, 9);
+
+-- insert  tabla 18 codigo juan david
+
+INSERT INTO codigo VALUES(1, 1, 1, '2026-03-14', 12346);
+INSERT INTO codigo VALUES(2, 1, 2, '2025-06-30', 122);
+INSERT INTO codigo VALUES(3, 2, 1, '2025-01-15', 15);
+INSERT INTO codigo VALUES(4, 2, 3, '2024-05-25', 52);
+INSERT INTO codigo VALUES(5, 3, 5, '2025-08-08', 44);
+INSERT INTO codigo VALUES(6, 3, 3, '2025-12-12', 266);
+INSERT INTO codigo VALUES(7, 3, 6, '2025-12-20', 754);
+INSERT INTO codigo VALUES(8, 1, 8, '2025-12-20', 6555);
+INSERT INTO codigo VALUES(9, 2, 5, '2025-12-20', 323);
+INSERT INTO codigo VALUES(10, 3, 5, '2025-12-20', 51);
