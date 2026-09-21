@@ -32,3 +32,8 @@ create table cuenta_sitio(
     constraint fk_cuenta__cuenta_sitio foreign key (id_cuenta) REFERENCES cuenta(id),
     constraint fk_sitio__cuenta_sitio foreign key (id_sitio) REFERENCES sitio(id)
 );
+
+comment on table cuenta_sitio is 'Relaciona las cuentas de usuario con los sitios a los que tienen acceso';
+comment on column cuenta_sitio.id is 'Llave primaria sustituta de la tabla';
+comment on column cuenta_sitio.id_cuenta is 'Id de la cuenta asociada al sitio';
+comment on column cuenta_sitio.id_sitio is 'Id del sitio asociado a la cuenta';
