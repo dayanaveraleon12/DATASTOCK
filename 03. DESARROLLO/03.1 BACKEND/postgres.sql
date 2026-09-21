@@ -180,3 +180,6 @@ update remision set cantidad_remitida = 60 where remision.cantidad_remitida = 55
 
 -- A PARTIR DE AQUÍ ABAJO VAN LOS DELETE
 -- POR FAVOR, COLOCARLOS EN EL ORDEN POR PRECAUCIÓN
+
+-- se elimina en la tabla remision "20" la fila de cantidad remitida juan david
+delete from remision where remision.cantidad_remitida = 55;
