@@ -520,6 +520,23 @@ delete from remision where remision.cantidad_remitida = 55;
 -- A PARTIR DE AQUÍ ABAJO VAN LOS JOIN
 -- POR FAVOR, COLOCARLOS EN EL ORDEN POR PRECAUCIÓN
 
+--Inner Join de Esteban
+-- Le indico que me muestre las 3 columnas a continuación.
+SELECT
+    p.nombre_especificacion,
+    ca.nombre,
+    ep.tipo_estado
+FROM
+    producto p -- Le indico que tome como tabla base de busqueda la que se llama "producto".
+INNER JOIN estado_producto ep ON -- Le indico la tabla con la que quiero que compare "producto". En éste caso, "estado_producto".
+    p.id_estado_producto = ep.id -- Comparo la llave foránea de "productos" con la de "estado_producto" para que me traiga la información exacta y correspondiente al id.
+INNER JOIN categoria ca ON -- Le indico que me compara ahora la tabla "producto" con "categoria".
+    p.id_categoria = ca.id -- Le indico que compare la llave foránea de "producto" con la llave primaria de "categoria". 
+WHERE
+    p.id = 2 -- Finalmente, le indico que el id que quiero que compare, es el número "2", en éste caso.
+; -- Una vez finalizado el proceso, el sistema te traera las columnas colocadas al inicio del SELECT con la información correspondiente.
+
+
 --Inner Join de Jhon tabla 12 cuenta 
 SELECT
     ct.primer_nombre,
