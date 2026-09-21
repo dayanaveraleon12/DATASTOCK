@@ -51,3 +51,10 @@ create table codigo(
     constraint fk_cuenta_sitio__codigo foreign key (id_cuenta_sitio) references cuenta_sitio(id),
     constraint uk_codigo unique (codigo)
 );
+
+comment on table codigo is 'Registra los códigos asociados a las remisiones y su estado';
+comment on column codigo.id is 'Llave primaria sustituta de la tabla';
+comment on column codigo.id_estado is 'Id del estado actual del código de la remisión';
+comment on column codigo.id_cuenta_sitio is 'Id de la cuenta asociada al sitio que genera la remisión';
+comment on column codigo.fecha_remision is 'Fecha en la que se genera la remisión';
+comment on column codigo.codigo is 'Código único asignado a la remisión';
