@@ -655,6 +655,25 @@ VALUES
     (9, 6, 1),
     (10, 4, 2);
 
+--insert tabla 24 / Marce
+INSERT INTO traslado_producto_sitio(
+    id,
+    id_traslado,
+    id_producto_sitio,
+    cantidad_traslado
+)
+VALUES
+    (1, 1, 1, 10),
+    (2, 2, 1, 12),
+    (3, 3, 1, 55),
+    (4, 4, 7, 13),
+    (5, 5, 7, 1),
+    (6, 6, 10, 2),
+    (7, 7, 1, 5),
+    (8, 8, 10, 8),
+    (9, 9, 1, 9),
+    (10, 10, 7, 7);
+
 
 -- A PARTIR DE AQUÍ ABAJO VAN LOS UPDATE
 -- POR FAVOR, COLOCARLOS EN EL ORDEN POR PRECAUCIÓN
