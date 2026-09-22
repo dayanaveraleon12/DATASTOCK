@@ -595,6 +595,26 @@ INSERT INTO remision VALUES(8, 4, 6, 2, 95);
 INSERT INTO remision VALUES(9, 2, 6, 1, 51);
 INSERT INTO remision VALUES(10, 3, 2, 7, 12);
 
+--insert tabla 21 / Marce
+INSERT INTO traslado (
+    id,
+    id_cuenta_sitio,
+    id_sitio_destino,
+    id_codigo,
+    descripcion
+)
+VALUES 
+    (1, 1, 1, 1, NULL),
+    (2, 1, 8, 1, NULL),
+    (3, 8, 1, 2, NULL),
+    (4, 2, 8, 2, NULL),
+    (5, 2, 2, 4, NULL),
+    (6, 3, 3, 5, NULL),
+    (7, 1, 4, 6, NULL),
+    (8, 2, 5, 7, NULL),
+    (9, 7, 6, 8, NULL),
+    (10, 3, 6, 9, NULL);
+
 -- A PARTIR DE AQUÍ ABAJO VAN LOS UPDATE
 -- POR FAVOR, COLOCARLOS EN EL ORDEN POR PRECAUCIÓN
 
