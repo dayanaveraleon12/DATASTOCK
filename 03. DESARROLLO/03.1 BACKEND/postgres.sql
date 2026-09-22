@@ -637,6 +637,25 @@ VALUES
     (9, 2, 2, 10, 'http', 2, 'dainado'),
     (10, 3, 2, 4, 'http', 29, 'dainado');
 
+--insert tabla 23 / Marce
+INSERT INTO producto_sitio_salida(
+    id,
+    id_producto_sitio,
+    id_salida
+)
+VALUES
+    (1, 1, 8),
+    (2, 1, 9),
+    (3, 2, 4),
+    (4, 5, 7),
+    (5, 6, 6),
+    (6, 5, 6),
+    (7, 2, 1),
+    (8, 6, 1),
+    (9, 6, 1),
+    (10, 4, 2);
+
+
 -- A PARTIR DE AQUÍ ABAJO VAN LOS UPDATE
 -- POR FAVOR, COLOCARLOS EN EL ORDEN POR PRECAUCIÓN
 
