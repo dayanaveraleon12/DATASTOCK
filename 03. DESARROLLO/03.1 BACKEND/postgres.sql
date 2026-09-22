@@ -48,6 +48,10 @@ create table marca(
 	constraint uk_marca unique(marca)
 );
 
+comment on table marca is 'Marca de productos predeterminadas del sistema y que se pueden agregar / modificar';
+comment on column marca.id is 'Llave primaria sustituta de la tabla';
+comment on column marca.marca is 'Nombre de las marcas a asignar/crear';
+
 -- Tabla 6 presentacion Esteban
 create table presentacion(
     id integer not null,
