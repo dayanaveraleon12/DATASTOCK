@@ -363,6 +363,15 @@ comment on column salida.respaldo_imagen is 'Ruta o direccion del archivo de ima
 comment on column salida.cantidad_a_sacar is 'Cantidad de los productos a retirar';
 comment on column salida.observaciones is 'Notas adicionales sobre la salida';
 
+--tabla 23 / Marce
+create table producto_sitio_salida(
+    id integer not null,
+    id_producto_sitio integer not null,
+    id_salida integer not null,
+    constraint pk_producto_sitio_salida primary key (id),
+    constraint fk_producto_sitio__producto_sitio_salida foreign key (id_producto_sitio) references producto_sitio(id),
+    constraint fk__salida_producto_sitio_salida foreign key (id_salida) references salida(id)
+);
 
 
 -- A PARTIR DE AQUÍ ABAJO VAN LOS INSERT DE LAS TABLAS
