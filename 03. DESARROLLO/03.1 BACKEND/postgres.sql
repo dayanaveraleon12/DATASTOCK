@@ -615,6 +615,28 @@ VALUES
     (9, 7, 6, 8, NULL),
     (10, 3, 6, 9, NULL);
 
+--insert tabla 22 / Marce
+INSERT INTO salida (
+    id,
+    id_cuenta_sitio,
+    id_motivo_salida,
+    id_evidencia_salida,
+    respaldo_imagen,
+    cantidad_a_sacar,
+    observaciones
+)
+VALUES
+    (1, 1, 1, 1, NULL, 2, NULL),
+    (2, 2, 1, 1, NULL, 56, NULL),
+    (3, 5, 1, 2, NULL, 58, NULL),
+    (4, 8, 1, 3, NULL, 5, NULL),
+    (5, 8, 2, 6, 'http', 23, 'dainado'),
+    (6, 6, 3, 5, 'http', 54, 'no llego'),
+    (7, 3, 2, 5, NULL, 2, NULL),
+    (8, 5, 1, 9, NULL, 6, NULL),
+    (9, 2, 2, 10, 'http', 2, 'dainado'),
+    (10, 3, 2, 4, 'http', 29, 'dainado');
+
 -- A PARTIR DE AQUÍ ABAJO VAN LOS UPDATE
 -- POR FAVOR, COLOCARLOS EN EL ORDEN POR PRECAUCIÓN
 
