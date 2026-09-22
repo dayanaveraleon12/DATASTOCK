@@ -1,13 +1,8 @@
 {
   "users": [
     {
-      "correo_electronico": "random@gmail.com",
-      "contrasenia": "R123456",
-      "id": "LhA5u8C"
-    },
-    {
-      "email": "Magui@gmail.com",
-      "password": "$2a$10$Xab2o7nB9XrByRGwe9tJROXRbpf4kPkxbERDW8wS7a4qeCTQitoym",
+      "email": "Maguito@gmail.com",
+      "password": "$2a$10$aEoeua3S0rSBt1UzJc0xJ.Vs9qbX4rCrPHEZFeGAUB2GPNZIJbEGO",
       "id": "LNRG4Pg"
     },
     {
@@ -33,12 +28,12 @@
     {
       "email": "andre@gmail.com",
       "password": "$2a$10$rp8VicakkPi.jccARi3EYu.yzURZKWgSZLfQFonwnGNTXkOeWCUgS",
-      "id": "uDhJ4-t"
+      "id": "1"
     },
     {
-      "email": "dayanaveraleon12@gmail.com",
-      "password": "$2a$10$kv2HnxE0fScxVm21jiKVmOb07Zdfm6Om7Pfi8PjeKzosxJzNbSUFK",
-      "id": "HRVwGKx"
+      "email": "prueba@gmail.com",
+      "password": "$2a$10$kpYZc5jvPsb3v8PYwBogE.i9CAkadllIPdAhPMS6ragEIVMq5kiHW",
+      "id": "1nse0Xg"
     }
   ],
   "tipoDocumentos": [
@@ -59,7 +54,7 @@
       "id": "4"
     },
     {
-      "nombre_documento": "RC",
+      "nombre_documento": "PA",
       "id": "5"
     },
     {
@@ -91,6 +86,14 @@
     {
       "nombre": "Tienda 2",
       "id": "7P50GXe"
+    },
+    {
+      "nombre": "Tienda 3",
+      "id": "KWrLevh"
+    },
+    {
+      "nombre": "Bodega",
+      "id": "LVTzx3i"
     }
   ],
   "categorias": [
@@ -135,6 +138,34 @@
     {
       "nombre": "Bolsa",
       "id": "NehaRcp"
+    },
+    {
+      "nombre": "Bulto",
+      "id": "0_22FZ9"
+    },
+    {
+      "nombre": "Unidad",
+      "id": "pMeUQGf"
+    },
+    {
+      "nombre": "Paquete",
+      "id": "YLGPO_H"
+    },
+    {
+      "nombre": "Botella",
+      "id": "IEKFycO"
+    },
+    {
+      "nombre": "Lata",
+      "id": "nkMOWZN"
+    },
+    {
+      "nombre": "Caja",
+      "id": "V6yRjUY"
+    },
+    {
+      "nombre": "Vaso",
+      "id": "aMBotVW"
     }
   ],
   "marcas": [
@@ -145,6 +176,34 @@
     {
       "nombre": "Roa",
       "id": "uI2PQzl"
+    },
+    {
+      "nombre": "Alqueria",
+      "id": "1mMTfL6"
+    },
+    {
+      "nombre": "Ramo",
+      "id": "YgK8I6C"
+    },
+    {
+      "nombre": "Colanta",
+      "id": "7tTpHaM"
+    },
+    {
+      "nombre": "Nutresa",
+      "id": "hpiSYCN"
+    },
+    {
+      "nombre": "Alpina",
+      "id": "IQTsXw3"
+    },
+    {
+      "nombre": "Bimbo",
+      "id": "ZFx7gIj"
+    },
+    {
+      "nombre": "Postobon",
+      "id": "sRf2s_A"
     }
   ]
 }
