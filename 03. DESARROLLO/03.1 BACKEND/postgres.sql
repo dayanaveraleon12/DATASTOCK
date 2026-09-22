@@ -452,6 +452,18 @@ insert into tipo_documento values(4, 'RC');
 insert into tipo_documento values(5, 'NIT');
 insert into tipo_documento values(6, 'nose');
 
+-- Insert / "mercancia" / marca / 4 / Day
+insert into marca values(1, 'Alqueria');
+insert into marca values(2, 'Ramo');
+insert into marca values(3, 'Colanta');
+insert into marca values(4, 'Diana');
+insert into marca values(5, 'Nutresa');
+insert into marca values(6, 'Alpina');
+insert into marca values(7, 'Bimbo');
+insert into marca values(8, 'Postobon');
+insert into marca values(9, 'CocaCola');
+insert into marca values(10, 'Ariel');
+
 -- Insert tabla 6 presentación Esteban
 insert into presentacion values(1, 'Unidad');
 insert into presentacion values(2, 'Paquete');
