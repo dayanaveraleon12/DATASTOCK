@@ -354,6 +354,15 @@ create table salida (
     constraint fk_evidencia_salida__salida foreign key (id_evidencia_salida) references evidencia_salida(id)
 );
 
+comment on table salida is 'Registra las salidas de productos';
+comment on column salida.id is 'Llave primaria sustituta de la tabla';
+comment on column salida.id_cuenta_sitio is 'Id de la cuenta asociada a la salida';
+comment on column salida.id_motivo_salida is 'Id del motivo asociado a la salida';
+comment on column salida.id_evidencia_salida is 'Id de la evidencia que respalda la salida';
+comment on column salida.respaldo_imagen is 'Ruta o direccion del archivo de imagen que sirve como evidencia';
+comment on column salida.cantidad_a_sacar is 'Cantidad de los productos a retirar';
+comment on column salida.observaciones is 'Notas adicionales sobre la salida';
+
 
 
 -- A PARTIR DE AQUÍ ABAJO VAN LOS INSERT DE LAS TABLAS
