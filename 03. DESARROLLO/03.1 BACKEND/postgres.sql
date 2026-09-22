@@ -339,6 +339,22 @@ comment on column traslado.id_sitio_destino is 'Id del sitio de destino del tras
 comment on column traslado.id_codigo is 'Id del codigo asociado al traslado';
 comment on column traslado.descripcion is 'Descripcion del traslado';
 
+--tabla 22 / Marce
+create table salida (
+    id integer not null,
+    id_cuenta_sitio integer not null,
+    id_motivo_salida integer not null,
+    id_evidencia_salida integer not null,
+    respaldo_imagen varchar(255),
+    cantidad_a_sacar integer not null,
+    observaciones varchar(150),
+    constraint pk_salida primary key (id),
+    constraint fk_motivo_salida__salida foreign key (id_motivo_salida) references motivo_salida(id),
+    constraint fk_cuenta_sitio__salida foreign key (id_cuenta_sitio) references cuenta_sitio(id),
+    constraint fk_evidencia_salida__salida foreign key (id_evidencia_salida) references evidencia_salida(id)
+);
+
+
 
 -- A PARTIR DE AQUÍ ABAJO VAN LOS INSERT DE LAS TABLAS
 -- DEBEN IR EN ORDEN YA QUE TAMBIÉN LOS DATOS DEPENDEN LOS UNOS DE LOS OTROS.
