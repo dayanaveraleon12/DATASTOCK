@@ -36,6 +36,10 @@ create table tipo_documento(
 	constraint uk_tipo_documento unique(tipo_documento)
 );
 
+comment on table tipo_documento is 'Asignación de tipos de documentos al sistema';
+comment on column tipo_documento.id is 'Llave primaria sustituta de la tabla';
+comment on column tipo_documento.tipo_documento is 'Agregar tipo de documento que va a ser valido';
+
 -- Tabla 6 presentacion Esteban
 create table presentacion(
     id integer not null,
