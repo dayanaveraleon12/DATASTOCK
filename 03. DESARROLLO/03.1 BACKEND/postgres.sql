@@ -793,6 +793,9 @@ delete from remision where remision.cantidad_remitida = 55;
 -- Delete en la tabla 24 / Marce
 DELETE FROM traslado_producto_sitio WHERE id = 10;
 
+-- Eliminamos un campo que quedo ¨MAL" / DAY / Tabla 3 tipo_documento
+delete from tipo_documento td where td.tipo_documento = 'nose';
+
 
 -- A PARTIR DE AQUÍ ABAJO VAN LOS JOIN
 -- POR FAVOR, COLOCARLOS EN EL ORDEN POR PRECAUCIÓN
