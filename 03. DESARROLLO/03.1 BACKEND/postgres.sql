@@ -426,6 +426,12 @@ comment on column traslado_producto_sitio.cantidad_traslado is 'Cantidad de prod
 -- A PARTIR DE AQUÍ ABAJO VAN LOS INSERT DE LAS TABLAS
 -- DEBEN IR EN ORDEN YA QUE TAMBIÉN LOS DATOS DEPENDEN LOS UNOS DE LOS OTROS.
 
+-- Insert / "actores" / rol / 1 / Day
+insert into rol values(1, 'Empresario');
+insert into rol values(2, 'Administrador inventario');
+insert into rol values(3, 'Empleado');
+insert into rol values(4, 'PendienteE');
+
 -- Insert tabla 6 presentación Esteban
 insert into presentacion values(1, 'Unidad');
 insert into presentacion values(2, 'Paquete');
