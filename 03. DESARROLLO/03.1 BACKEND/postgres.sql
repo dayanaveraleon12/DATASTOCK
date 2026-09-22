@@ -444,6 +444,14 @@ insert into usuario values(8, 'lili@gmail.com', crypt('L12345', gen_salt('bf')))
 insert into usuario values(9, 'sara@gmail.com', crypt('Sara12', gen_salt('bf')));
 insert into usuario values(10, 'neyder@gmail.com', crypt('N12345', gen_salt('bf')), 987654);
 
+-- Insert / "actores" / tipo_documento / 3 / Day
+insert into tipo_documento values(1, 'CC');
+insert into tipo_documento values(2, 'PAS');
+insert into tipo_documento values(3, 'TI');
+insert into tipo_documento values(4, 'RC');
+insert into tipo_documento values(5, 'NIT');
+insert into tipo_documento values(6, 'nose');
+
 -- Insert tabla 6 presentación Esteban
 insert into presentacion values(1, 'Unidad');
 insert into presentacion values(2, 'Paquete');
