@@ -60,6 +60,10 @@ create table categoria(
 	constraint uk_categoria unique(nombre)
 );
 
+comment on table categoria is 'Categoria de productos predeterminadas del sistema y que se pueden agregar / modificar, para organizar estos';
+comment on column categoria.id is 'Llave primaria sustituta de la tabla';
+comment on column categoria.nombre is 'Nombre de las categorias que se van a poder asignar a productos';
+
 -- Tabla 6 presentacion Esteban
 create table presentacion(
     id integer not null,
