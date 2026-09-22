@@ -1,5 +1,13 @@
 create extension if not exists pgcrypto;
 
+-- Package "actores" / rol /1 / Day
+create table rol(
+	id integer not null,
+	nombre varchar(50) not null,
+	constraint pk_rol primary key (id),
+	constraint uk_nombre unique (nombre)
+);
+
 -- Tabla 6 presentacion Esteban
 create table presentacion(
     id integer not null,
