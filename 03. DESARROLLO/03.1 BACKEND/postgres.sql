@@ -332,6 +332,14 @@ create table traslado(
     constraint fk_sitio__traslado_destino foreign key (id_sitio_destino) references sitio(id)
 );
 
+comment on table traslado is 'Registra los traslados de las cuentas desde un sitio de origen hacia un sitio de destino';
+comment on column traslado.id is 'Llave primaria sustituta de la tabla';
+comment on column traslado.id_cuenta_sitio is 'Id de la cuenta y del sitio de origen asociados al traslado';
+comment on column traslado.id_sitio_destino is 'Id del sitio de destino del traslado';
+comment on column traslado.id_codigo is 'Id del codigo asociado al traslado';
+comment on column traslado.descripcion is 'Descripcion del traslado';
+
+
 -- A PARTIR DE AQUÍ ABAJO VAN LOS INSERT DE LAS TABLAS
 -- DEBEN IR EN ORDEN YA QUE TAMBIÉN LOS DATOS DEPENDEN LOS UNOS DE LOS OTROS.
 
