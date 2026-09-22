@@ -22,6 +22,12 @@ create table usuario(
 	constraint uk_iniciar_sesion unique (correo_electronico)
 );
 
+comment on table usuario is 'Usuario a crear/registrarse';
+comment on column usuario.id is 'Llave primaria sustituta de la tabla';
+comment on column usuario.correo_electronico is 'Correo del usuario';
+comment on column usuario.contrasenia is 'Contraseña del usuario a crear';
+comment on column usuario.token_cambio_contrasenia is 'Token o código de 6 digitos generado al correo registrado del usuario, para recuperar su contraseña y acceso';
+
 -- Tabla 6 presentacion Esteban
 create table presentacion(
     id integer not null,
