@@ -378,6 +378,17 @@ comment on column producto_sitio_salida.id is 'Llave primaria sustituta de la ta
 comment on column producto_sitio_salida.id_producto_sitio is 'Id del producto asociado al sitio';
 comment on column producto_sitio_salida.id_salida is 'Id de la salida registrada';
 
+--tabla 24 / Marce
+create table traslado_producto_sitio(
+    id integer not null,
+    id_traslado integer not null,
+    id_producto_sitio integer not null,
+    cantidad_traslado integer not null,
+    constraint pk_traslado_producto_sitio primary key (id),
+    constraint fk_traslado__traslado_producto_sitio foreign key (id_traslado) references traslado(id),
+    constraint fk_producto_sitio__traslado_producto_sitio foreign key (id_producto_sitio) references producto_sitio(id)
+);
+
 -- A PARTIR DE AQUÍ ABAJO VAN LOS INSERT DE LAS TABLAS
 -- DEBEN IR EN ORDEN YA QUE TAMBIÉN LOS DATOS DEPENDEN LOS UNOS DE LOS OTROS.
 
