@@ -373,6 +373,10 @@ create table producto_sitio_salida(
     constraint fk__salida_producto_sitio_salida foreign key (id_salida) references salida(id)
 );
 
+comment on table producto_sitio_salida is 'Registra la relacion entre los productos de un sitio y las salidas realizadas';
+comment on column producto_sitio_salida.id is 'Llave primaria sustituta de la tabla';
+comment on column producto_sitio_salida.id_producto_sitio is 'Id del producto asociado al sitio';
+comment on column producto_sitio_salida.id_salida is 'Id de la salida registrada';
 
 -- A PARTIR DE AQUÍ ABAJO VAN LOS INSERT DE LAS TABLAS
 -- DEBEN IR EN ORDEN YA QUE TAMBIÉN LOS DATOS DEPENDEN LOS UNOS DE LOS OTROS.
