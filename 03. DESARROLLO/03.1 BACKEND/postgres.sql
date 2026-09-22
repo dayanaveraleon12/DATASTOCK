@@ -432,6 +432,18 @@ insert into rol values(2, 'Administrador inventario');
 insert into rol values(3, 'Empleado');
 insert into rol values(4, 'PendienteE');
 
+-- Insert / "actores" / usuario / 2 / Day
+insert into usuario values(1, 'day@gmail.com', crypt('D12345', gen_salt('bf')), 123456);
+insert into usuario values(2, 'juan@gmail.com', crypt('J12345', gen_salt('bf')), 654321);
+insert into usuario values(3, 'carl@gmail.com', crypt('C12345', gen_salt('bf')));
+insert into usuario values(4, 'ana@gmail.com', crypt('A12345', gen_salt('bf')));
+insert into usuario values(5, 'sofia@gmail.com', crypt('S12345', gen_salt('bf')));
+insert into usuario values(6,'jeffer@gmail.com', crypt('J12345', gen_salt('bf')));
+insert into usuario values(7, 'laura@gmail.com', crypt('L12345', gen_salt('bf')));
+insert into usuario values(8, 'lili@gmail.com', crypt('L12345', gen_salt('bf')));
+insert into usuario values(9, 'sara@gmail.com', crypt('Sara12', gen_salt('bf')));
+insert into usuario values(10, 'neyder@gmail.com', crypt('N12345', gen_salt('bf')), 987654);
+
 -- Insert tabla 6 presentación Esteban
 insert into presentacion values(1, 'Unidad');
 insert into presentacion values(2, 'Paquete');
