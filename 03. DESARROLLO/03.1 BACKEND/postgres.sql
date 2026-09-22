@@ -426,6 +426,56 @@ comment on column traslado_producto_sitio.cantidad_traslado is 'Cantidad de prod
 -- A PARTIR DE AQUÍ ABAJO VAN LOS INSERT DE LAS TABLAS
 -- DEBEN IR EN ORDEN YA QUE TAMBIÉN LOS DATOS DEPENDEN LOS UNOS DE LOS OTROS.
 
+-- Insert / "actores" / rol / 1 / Day
+insert into rol values(1, 'Empresario');
+insert into rol values(2, 'Administrador inventario');
+insert into rol values(3, 'Empleado');
+insert into rol values(4, 'PendienteE');
+
+-- Insert / "actores" / usuario / 2 / Day
+insert into usuario values(1, 'day@gmail.com', crypt('D12345', gen_salt('bf')), 123456);
+insert into usuario values(2, 'juan@gmail.com', crypt('J12345', gen_salt('bf')), 654321);
+insert into usuario values(3, 'carl@gmail.com', crypt('C12345', gen_salt('bf')));
+insert into usuario values(4, 'ana@gmail.com', crypt('A12345', gen_salt('bf')));
+insert into usuario values(5, 'sofia@gmail.com', crypt('S12345', gen_salt('bf')));
+insert into usuario values(6,'jeffer@gmail.com', crypt('J12345', gen_salt('bf')));
+insert into usuario values(7, 'laura@gmail.com', crypt('L12345', gen_salt('bf')));
+insert into usuario values(8, 'lili@gmail.com', crypt('L12345', gen_salt('bf')));
+insert into usuario values(9, 'sara@gmail.com', crypt('Sara12', gen_salt('bf')));
+insert into usuario values(10, 'neyder@gmail.com', crypt('N12345', gen_salt('bf')), 987654);
+
+-- Insert / "actores" / tipo_documento / 3 / Day
+insert into tipo_documento values(1, 'CC');
+insert into tipo_documento values(2, 'PAS');
+insert into tipo_documento values(3, 'TI');
+insert into tipo_documento values(4, 'RC');
+insert into tipo_documento values(5, 'NIT');
+insert into tipo_documento values(6, 'nose');
+
+-- Insert / "mercancia" / marca / 4 / Day
+insert into marca values(1, 'Alqueria');
+insert into marca values(2, 'Ramo');
+insert into marca values(3, 'Colanta');
+insert into marca values(4, 'Diana');
+insert into marca values(5, 'Nutresa');
+insert into marca values(6, 'Alpina');
+insert into marca values(7, 'Bimbo');
+insert into marca values(8, 'Postobon');
+insert into marca values(9, 'CocaCola');
+insert into marca values(10, 'Ariel');
+
+-- Insert / "mercancia" / categoria / 5 / Day
+insert into categoria values(1, 'Lacteos');
+insert into categoria values(2, 'Congelados');
+insert into categoria values(3, 'Granos');
+insert into categoria values(4, 'Bebidas');
+insert into categoria values(5, 'Cuidado personal');
+insert into categoria values(6, 'Aseo hogar');
+insert into categoria values(7, 'Jabones');
+insert into categoria values(8, 'Alcohol');
+insert into categoria values(9, 'Dulces');
+insert into categoria values(10, 'Harinas');
+
 -- Insert tabla 6 presentación Esteban
 insert into presentacion values(1, 'Unidad');
 insert into presentacion values(2, 'Paquete');
@@ -718,6 +768,8 @@ update remision set cantidad_remitida = 60 where remision.cantidad_remitida = 55
 -- Se actualiza la descripcion en la tabla traslado (21) / Marce
 UPDATE traslado SET descripcion = 'Traslado de tienda 1 a tienda 2 para acabar existencias en stock' WHERE id = 1;
 
+-- Actualizamos el campo para que quede bien escrito :) / Day / Tabla 1 rol
+update rol r set nombre = 'Pendiente' where r.nombre = 'PendienteE';
 
 
 -- A PARTIR DE AQUÍ ABAJO VAN LOS DELETE
@@ -741,9 +793,28 @@ delete from remision where remision.cantidad_remitida = 55;
 -- Delete en la tabla 24 / Marce
 DELETE FROM traslado_producto_sitio WHERE id = 10;
 
+-- Eliminamos un campo que quedo ¨MAL" / DAY / Tabla 3 tipo_documento
+delete from tipo_documento td where td.tipo_documento = 'nose';
+
 
 -- A PARTIR DE AQUÍ ABAJO VAN LOS JOIN
 -- POR FAVOR, COLOCARLOS EN EL ORDEN POR PRECAUCIÓN
+
+
+-- DAY / Consulta de datos de usuario / tablas 2 y 3 en base a la 12 
+SELECT -- indico los campos que quiero ver
+    u.correo_electronico,
+    u.contrasenia,
+    td.tipo_documento
+FROM -- Tabla base de comparacion
+    cuenta c
+INNER JOIN tipo_documento td ON -- otras tablas que tienen los datos que quiero traer
+    c.id_tipo_documento = td.id
+INNER JOIN usuario u ON
+    c.id_usuario = u.id
+WHERE
+    c.id = 5;
+
 
 --Inner Join de Esteban
 -- Le indico que me muestre las 3 columnas a continuación.
@@ -798,6 +869,18 @@ INNER JOIN traslado t ON tps.id_traslado = t.id;
 
 -- A PARTIR DE AQUÍ ABAJO VAN LAS CONSULTAS Y SUBCONSULTAS
 -- POR FAVOR, COLOCARLOS EN EL ORDEN POR PRECAUCIÓN 
+
+
+-- Consultar que Categorias (tabla 5) tienen productos (tabla 14)
+-- Consultar qué Categorías (tabla 5) tienen productos asociados (tabla 14)
+SELECT c.id, c.nombre AS nombre_categoria  -- Columnas a mostrar de la categoría
+FROM categoria c -- Tabla principal
+WHERE EXISTS ( -- Retorna TRUE si la subconsulta encuentra al menos un registro
+    SELECT 1  -- Indicador de presencia (PostgreSQL solo evalúa si existe la fila)
+    FROM producto p 
+    WHERE p.id_categoria = c.id -- Relación entre el producto y la categoría
+);
+
 
 --¿Qué productos tienen existencias en los sitios y además han sido solicitados mediante una remisión? tabla producto_sitio y remision juan david
 SELECT
