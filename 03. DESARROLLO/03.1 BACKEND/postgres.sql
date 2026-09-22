@@ -40,6 +40,14 @@ comment on table tipo_documento is 'Asignación de tipos de documentos al sistem
 comment on column tipo_documento.id is 'Llave primaria sustituta de la tabla';
 comment on column tipo_documento.tipo_documento is 'Agregar tipo de documento que va a ser valido';
 
+-- Package "mercancia" / marca / 4 / Day
+create table marca(
+	id integer not null,
+	marca varchar(50) not null,
+	constraint pk_marca primary key(id),
+	constraint uk_marca unique(marca)
+);
+
 -- Tabla 6 presentacion Esteban
 create table presentacion(
     id integer not null,
