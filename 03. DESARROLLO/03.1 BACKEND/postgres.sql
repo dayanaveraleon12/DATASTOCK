@@ -759,6 +759,14 @@ c.id_cuenta_sitio= r.id
 inner join producto_sitio ps ON
 ps.id = r.id_producto_sitio;
 
+-- Inner join de Marce -> muestra la descripcion y la cantidad de productos del traslado
+SELECT 
+    t.descripcion,
+    tps.cantidad_traslado
+FROM traslado_producto_sitio tps
+INNER JOIN traslado t ON tps.id_traslado = t.id;
+
+
 
 -- A PARTIR DE AQUÍ ABAJO VAN LAS CONSULTAS Y SUBCONSULTAS
 -- POR FAVOR, COLOCARLOS EN EL ORDEN POR PRECAUCIÓN 
