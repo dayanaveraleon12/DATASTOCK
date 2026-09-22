@@ -800,6 +800,22 @@ delete from tipo_documento td where td.tipo_documento = 'nose';
 -- A PARTIR DE AQUÍ ABAJO VAN LOS JOIN
 -- POR FAVOR, COLOCARLOS EN EL ORDEN POR PRECAUCIÓN
 
+
+-- DAY / Consulta de datos de usuario / tablas 2 y 3 en base a la 12 
+SELECT -- indico los campos que quiero ver
+    u.correo_electronico,
+    u.contrasenia,
+    td.tipo_documento
+FROM -- Tabla base de comparacion
+    cuenta c
+INNER JOIN tipo_documento td ON -- otras tablas que tienen los datos que quiero traer
+    c.id_tipo_documento = td.id
+INNER JOIN usuario u ON
+    c.id_usuario = u.id
+WHERE
+    c.id = 5;
+
+
 --Inner Join de Esteban
 -- Le indico que me muestre las 3 columnas a continuación.
 SELECT
