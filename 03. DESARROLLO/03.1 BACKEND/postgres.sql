@@ -710,6 +710,9 @@ DELETE FROM producto WHERE id = 11;
 -- se elimina en la tabla remision "20" la fila de cantidad remitida juan david
 delete from remision where remision.cantidad_remitida = 55;
 
+-- Delete en la tabla 24 / Marce
+DELETE FROM traslado_producto_sitio WHERE id = 10;
+
 
 -- A PARTIR DE AQUÍ ABAJO VAN LOS JOIN
 -- POR FAVOR, COLOCARLOS EN EL ORDEN POR PRECAUCIÓN
