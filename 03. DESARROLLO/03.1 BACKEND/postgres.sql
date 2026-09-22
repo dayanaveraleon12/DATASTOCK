@@ -870,6 +870,18 @@ INNER JOIN traslado t ON tps.id_traslado = t.id;
 -- A PARTIR DE AQUÍ ABAJO VAN LAS CONSULTAS Y SUBCONSULTAS
 -- POR FAVOR, COLOCARLOS EN EL ORDEN POR PRECAUCIÓN 
 
+
+-- Consultar que Categorias (tabla 5) tienen productos (tabla 14)
+-- Consultar qué Categorías (tabla 5) tienen productos asociados (tabla 14)
+SELECT c.id, c.nombre AS nombre_categoria  -- Columnas a mostrar de la categoría
+FROM categoria c -- Tabla principal
+WHERE EXISTS ( -- Retorna TRUE si la subconsulta encuentra al menos un registro
+    SELECT 1  -- Indicador de presencia (PostgreSQL solo evalúa si existe la fila)
+    FROM producto p 
+    WHERE p.id_categoria = c.id -- Relación entre el producto y la categoría
+);
+
+
 --¿Qué productos tienen existencias en los sitios y además han sido solicitados mediante una remisión? tabla producto_sitio y remision juan david
 SELECT
     ps.id_producto,
