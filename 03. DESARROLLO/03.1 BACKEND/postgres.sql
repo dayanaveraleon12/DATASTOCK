@@ -768,6 +768,8 @@ update remision set cantidad_remitida = 60 where remision.cantidad_remitida = 55
 -- Se actualiza la descripcion en la tabla traslado (21) / Marce
 UPDATE traslado SET descripcion = 'Traslado de tienda 1 a tienda 2 para acabar existencias en stock' WHERE id = 1;
 
+-- Actualizamos el campo para que quede bien escrito :) / Day / Tabla 1 rol
+update rol r set nombre = 'Pendiente' where r.nombre = 'PendienteE';
 
 
 -- A PARTIR DE AQUÍ ABAJO VAN LOS DELETE
