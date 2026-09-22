@@ -687,6 +687,9 @@ UPDATE lote SET observaciones = 'Revisión técnica aprobada: producto apto para
 --se cambia/actualiza el valor de "55" por el "60" en la tabla "20" juan david
 update remision set cantidad_remitida = 60 where remision.cantidad_remitida = 55;
 
+-- Se actualiza la descripcion en la tabla traslado (21) / Marce
+UPDATE traslado SET descripcion = 'Traslado de tienda 1 a tienda 2 para acabar existencias en stock' WHERE id = 1;
+
 
 
 -- A PARTIR DE AQUÍ ABAJO VAN LOS DELETE
