@@ -464,6 +464,18 @@ insert into marca values(8, 'Postobon');
 insert into marca values(9, 'CocaCola');
 insert into marca values(10, 'Ariel');
 
+-- Insert / "mercancia" / categoria / 5 / Day
+insert into categoria values(1, 'Lacteos');
+insert into categoria values(2, 'Congelados');
+insert into categoria values(3, 'Granos');
+insert into categoria values(4, 'Bebidas');
+insert into categoria values(5, 'Cuidado personal');
+insert into categoria values(6, 'Aseo hogar');
+insert into categoria values(7, 'Jabones');
+insert into categoria values(8, 'Alcohol');
+insert into categoria values(9, 'Dulces');
+insert into categoria values(10, 'Harinas');
+
 -- Insert tabla 6 presentación Esteban
 insert into presentacion values(1, 'Unidad');
 insert into presentacion values(2, 'Paquete');
