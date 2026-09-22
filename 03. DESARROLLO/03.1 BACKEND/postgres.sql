@@ -12,6 +12,16 @@ comment on table rol is 'Roles asignados a cada actor';
 comment on column rol.id is 'Llave primaria sustituta de la tabla';
 comment on column rol.nombre is 'Nombre del rol creado';
 
+-- Package "actores" / usuario /2 / Day
+create table usuario(
+	id integer not null,
+	correo_electronico varchar(50) not null,
+	contrasenia varchar(255) not null,
+	token_cambio_contrasenia integer null,
+	constraint pk_usuario primary key (id),
+	constraint uk_iniciar_sesion unique (correo_electronico)
+);
+
 -- Tabla 6 presentacion Esteban
 create table presentacion(
     id integer not null,
