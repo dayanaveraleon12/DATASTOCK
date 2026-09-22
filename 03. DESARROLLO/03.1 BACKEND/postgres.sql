@@ -8,6 +8,10 @@ create table rol(
 	constraint uk_nombre unique (nombre)
 );
 
+comment on table rol is 'Roles asignados a cada actor';
+comment on column rol.id is 'Llave primaria sustituta de la tabla';
+comment on column rol.nombre is 'Nombre del rol creado';
+
 -- Tabla 6 presentacion Esteban
 create table presentacion(
     id integer not null,
