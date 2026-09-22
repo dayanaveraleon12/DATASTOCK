@@ -319,6 +319,18 @@ comment on column remision.id_codigo is 'Id del código asociado a la remisión'
 comment on column remision.id_sitio_destino is 'Id del sitio donde serán enviados los productos';
 comment on column remision.cantidad_remitida is 'Cantidad de productos que se envian en la remisión';
 
+--tabla 21 / Marce
+create table traslado(
+    id integer not null,
+    id_cuenta_sitio integer not null,
+    id_sitio_destino integer not null,
+    id_codigo integer not null,
+    descripcion varchar(150),
+    constraint pk_traslado primary key (id),
+    constraint fk_cuenta_sitio__traslado foreign key (id_cuenta_sitio) references cuenta_sitio(id),
+    constraint fk_codigo_traslado_producto_sitio_lote foreign key (id_codigo) references codigo(id),
+    constraint fk_sitio__traslado_destino foreign key (id_sitio_destino) references sitio(id)
+);
 
 -- A PARTIR DE AQUÍ ABAJO VAN LOS INSERT DE LAS TABLAS
 -- DEBEN IR EN ORDEN YA QUE TAMBIÉN LOS DATOS DEPENDEN LOS UNOS DE LOS OTROS.
