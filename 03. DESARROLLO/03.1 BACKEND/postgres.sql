@@ -389,6 +389,12 @@ create table traslado_producto_sitio(
     constraint fk_producto_sitio__traslado_producto_sitio foreign key (id_producto_sitio) references producto_sitio(id)
 );
 
+comment on table traslado_producto_sitio is 'Registra el detalle de los productos y cantidades asociados a un traslado';
+comment on column traslado_producto_sitio.id is 'Llave primaria sustituta de la tabla';
+comment on column traslado_producto_sitio.id_traslado is 'Id del traslado correspondiente';
+comment on column traslado_producto_sitio.id_producto_sitio is 'Id del producto asociado al sitio';
+comment on column traslado_producto_sitio.cantidad_traslado is 'Cantidad de productos que se van a trasladar';
+
 -- A PARTIR DE AQUÍ ABAJO VAN LOS INSERT DE LAS TABLAS
 -- DEBEN IR EN ORDEN YA QUE TAMBIÉN LOS DATOS DEPENDEN LOS UNOS DE LOS OTROS.
 
