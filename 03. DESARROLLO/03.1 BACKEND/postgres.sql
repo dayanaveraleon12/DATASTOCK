@@ -52,6 +52,14 @@ comment on table marca is 'Marca de productos predeterminadas del sistema y que 
 comment on column marca.id is 'Llave primaria sustituta de la tabla';
 comment on column marca.marca is 'Nombre de las marcas a asignar/crear';
 
+-- Package "mercancia" / categoria / 5 / Day
+create table categoria(
+	id integer not null,
+	nombre varchar(100) not null,
+	constraint pk_categoria primary key(id),
+	constraint uk_categoria unique(nombre)
+);
+
 -- Tabla 6 presentacion Esteban
 create table presentacion(
     id integer not null,
