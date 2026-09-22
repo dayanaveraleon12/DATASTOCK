@@ -1,5 +1,69 @@
 create extension if not exists pgcrypto;
 
+-- Package "actores" / rol /1 / Day
+create table rol(
+	id integer not null,
+	nombre varchar(50) not null,
+	constraint pk_rol primary key (id),
+	constraint uk_nombre unique (nombre)
+);
+
+comment on table rol is 'Roles asignados a cada actor';
+comment on column rol.id is 'Llave primaria sustituta de la tabla';
+comment on column rol.nombre is 'Nombre del rol creado';
+
+-- Package "actores" / usuario /2 / Day
+create table usuario(
+	id integer not null,
+	correo_electronico varchar(50) not null,
+	contrasenia varchar(255) not null,
+	token_cambio_contrasenia integer null,
+	constraint pk_usuario primary key (id),
+	constraint uk_iniciar_sesion unique (correo_electronico)
+);
+
+comment on table usuario is 'Usuario a crear/registrarse';
+comment on column usuario.id is 'Llave primaria sustituta de la tabla';
+comment on column usuario.correo_electronico is 'Correo del usuario';
+comment on column usuario.contrasenia is 'Contraseña del usuario a crear';
+comment on column usuario.token_cambio_contrasenia is 'Token o código de 6 digitos generado al correo registrado del usuario, para recuperar su contraseña y acceso';
+
+-- Package "actores" / tipo_documento /3 / Day
+create table tipo_documento(
+	id integer not null,
+	tipo_documento varchar(10) not null,
+	constraint pk_tipo_documento primary key(id),
+	constraint uk_tipo_documento unique(tipo_documento)
+);
+
+comment on table tipo_documento is 'Asignación de tipos de documentos al sistema';
+comment on column tipo_documento.id is 'Llave primaria sustituta de la tabla';
+comment on column tipo_documento.tipo_documento is 'Agregar tipo de documento que va a ser valido';
+
+-- Package "mercancia" / marca / 4 / Day
+create table marca(
+	id integer not null,
+	marca varchar(50) not null,
+	constraint pk_marca primary key(id),
+	constraint uk_marca unique(marca)
+);
+
+comment on table marca is 'Marca de productos predeterminadas del sistema y que se pueden agregar / modificar';
+comment on column marca.id is 'Llave primaria sustituta de la tabla';
+comment on column marca.marca is 'Nombre de las marcas a asignar/crear';
+
+-- Package "mercancia" / categoria / 5 / Day
+create table categoria(
+	id integer not null,
+	nombre varchar(100) not null,
+	constraint pk_categoria primary key(id),
+	constraint uk_categoria unique(nombre)
+);
+
+comment on table categoria is 'Categoria de productos predeterminadas del sistema y que se pueden agregar / modificar, para organizar estos';
+comment on column categoria.id is 'Llave primaria sustituta de la tabla';
+comment on column categoria.nombre is 'Nombre de las categorias que se van a poder asignar a productos';
+
 -- Tabla 6 presentacion Esteban
 create table presentacion(
     id integer not null,
@@ -283,6 +347,81 @@ comment on column remision.id_codigo is 'Id del código asociado a la remisión'
 comment on column remision.id_sitio_destino is 'Id del sitio donde serán enviados los productos';
 comment on column remision.cantidad_remitida is 'Cantidad de productos que se envian en la remisión';
 
+--tabla 21 / Marce
+create table traslado(
+    id integer not null,
+    id_cuenta_sitio integer not null,
+    id_sitio_destino integer not null,
+    id_codigo integer not null,
+    descripcion varchar(150),
+    constraint pk_traslado primary key (id),
+    constraint fk_cuenta_sitio__traslado foreign key (id_cuenta_sitio) references cuenta_sitio(id),
+    constraint fk_codigo_traslado_producto_sitio_lote foreign key (id_codigo) references codigo(id),
+    constraint fk_sitio__traslado_destino foreign key (id_sitio_destino) references sitio(id)
+);
+
+comment on table traslado is 'Registra los traslados de las cuentas desde un sitio de origen hacia un sitio de destino';
+comment on column traslado.id is 'Llave primaria sustituta de la tabla';
+comment on column traslado.id_cuenta_sitio is 'Id de la cuenta y del sitio de origen asociados al traslado';
+comment on column traslado.id_sitio_destino is 'Id del sitio de destino del traslado';
+comment on column traslado.id_codigo is 'Id del codigo asociado al traslado';
+comment on column traslado.descripcion is 'Descripcion del traslado';
+
+--tabla 22 / Marce
+create table salida (
+    id integer not null,
+    id_cuenta_sitio integer not null,
+    id_motivo_salida integer not null,
+    id_evidencia_salida integer not null,
+    respaldo_imagen varchar(255),
+    cantidad_a_sacar integer not null,
+    observaciones varchar(150),
+    constraint pk_salida primary key (id),
+    constraint fk_motivo_salida__salida foreign key (id_motivo_salida) references motivo_salida(id),
+    constraint fk_cuenta_sitio__salida foreign key (id_cuenta_sitio) references cuenta_sitio(id),
+    constraint fk_evidencia_salida__salida foreign key (id_evidencia_salida) references evidencia_salida(id)
+);
+
+comment on table salida is 'Registra las salidas de productos';
+comment on column salida.id is 'Llave primaria sustituta de la tabla';
+comment on column salida.id_cuenta_sitio is 'Id de la cuenta asociada a la salida';
+comment on column salida.id_motivo_salida is 'Id del motivo asociado a la salida';
+comment on column salida.id_evidencia_salida is 'Id de la evidencia que respalda la salida';
+comment on column salida.respaldo_imagen is 'Ruta o direccion del archivo de imagen que sirve como evidencia';
+comment on column salida.cantidad_a_sacar is 'Cantidad de los productos a retirar';
+comment on column salida.observaciones is 'Notas adicionales sobre la salida';
+
+--tabla 23 / Marce
+create table producto_sitio_salida(
+    id integer not null,
+    id_producto_sitio integer not null,
+    id_salida integer not null,
+    constraint pk_producto_sitio_salida primary key (id),
+    constraint fk_producto_sitio__producto_sitio_salida foreign key (id_producto_sitio) references producto_sitio(id),
+    constraint fk__salida_producto_sitio_salida foreign key (id_salida) references salida(id)
+);
+
+comment on table producto_sitio_salida is 'Registra la relacion entre los productos de un sitio y las salidas realizadas';
+comment on column producto_sitio_salida.id is 'Llave primaria sustituta de la tabla';
+comment on column producto_sitio_salida.id_producto_sitio is 'Id del producto asociado al sitio';
+comment on column producto_sitio_salida.id_salida is 'Id de la salida registrada';
+
+--tabla 24 / Marce
+create table traslado_producto_sitio(
+    id integer not null,
+    id_traslado integer not null,
+    id_producto_sitio integer not null,
+    cantidad_traslado integer not null,
+    constraint pk_traslado_producto_sitio primary key (id),
+    constraint fk_traslado__traslado_producto_sitio foreign key (id_traslado) references traslado(id),
+    constraint fk_producto_sitio__traslado_producto_sitio foreign key (id_producto_sitio) references producto_sitio(id)
+);
+
+comment on table traslado_producto_sitio is 'Registra el detalle de los productos y cantidades asociados a un traslado';
+comment on column traslado_producto_sitio.id is 'Llave primaria sustituta de la tabla';
+comment on column traslado_producto_sitio.id_traslado is 'Id del traslado correspondiente';
+comment on column traslado_producto_sitio.id_producto_sitio is 'Id del producto asociado al sitio';
+comment on column traslado_producto_sitio.cantidad_traslado is 'Cantidad de productos que se van a trasladar';
 
 -- A PARTIR DE AQUÍ ABAJO VAN LOS INSERT DE LAS TABLAS
 -- DEBEN IR EN ORDEN YA QUE TAMBIÉN LOS DATOS DEPENDEN LOS UNOS DE LOS OTROS.
@@ -484,6 +623,86 @@ INSERT INTO remision VALUES(8, 4, 6, 2, 95);
 INSERT INTO remision VALUES(9, 2, 6, 1, 51);
 INSERT INTO remision VALUES(10, 3, 2, 7, 12);
 
+--insert tabla 21 / Marce
+INSERT INTO traslado (
+    id,
+    id_cuenta_sitio,
+    id_sitio_destino,
+    id_codigo,
+    descripcion
+)
+VALUES 
+    (1, 1, 1, 1, NULL),
+    (2, 1, 8, 1, NULL),
+    (3, 8, 1, 2, NULL),
+    (4, 2, 8, 2, NULL),
+    (5, 2, 2, 4, NULL),
+    (6, 3, 3, 5, NULL),
+    (7, 1, 4, 6, NULL),
+    (8, 2, 5, 7, NULL),
+    (9, 7, 6, 8, NULL),
+    (10, 3, 6, 9, NULL);
+
+--insert tabla 22 / Marce
+INSERT INTO salida (
+    id,
+    id_cuenta_sitio,
+    id_motivo_salida,
+    id_evidencia_salida,
+    respaldo_imagen,
+    cantidad_a_sacar,
+    observaciones
+)
+VALUES
+    (1, 1, 1, 1, NULL, 2, NULL),
+    (2, 2, 1, 1, NULL, 56, NULL),
+    (3, 5, 1, 2, NULL, 58, NULL),
+    (4, 8, 1, 3, NULL, 5, NULL),
+    (5, 8, 2, 6, 'http', 23, 'dainado'),
+    (6, 6, 3, 5, 'http', 54, 'no llego'),
+    (7, 3, 2, 5, NULL, 2, NULL),
+    (8, 5, 1, 9, NULL, 6, NULL),
+    (9, 2, 2, 10, 'http', 2, 'dainado'),
+    (10, 3, 2, 4, 'http', 29, 'dainado');
+
+--insert tabla 23 / Marce
+INSERT INTO producto_sitio_salida(
+    id,
+    id_producto_sitio,
+    id_salida
+)
+VALUES
+    (1, 1, 8),
+    (2, 1, 9),
+    (3, 2, 4),
+    (4, 5, 7),
+    (5, 6, 6),
+    (6, 5, 6),
+    (7, 2, 1),
+    (8, 6, 1),
+    (9, 6, 1),
+    (10, 4, 2);
+
+--insert tabla 24 / Marce
+INSERT INTO traslado_producto_sitio(
+    id,
+    id_traslado,
+    id_producto_sitio,
+    cantidad_traslado
+)
+VALUES
+    (1, 1, 1, 10),
+    (2, 2, 1, 12),
+    (3, 3, 1, 55),
+    (4, 4, 7, 13),
+    (5, 5, 7, 1),
+    (6, 6, 10, 2),
+    (7, 7, 1, 5),
+    (8, 8, 10, 8),
+    (9, 9, 1, 9),
+    (10, 10, 7, 7);
+
+
 -- A PARTIR DE AQUÍ ABAJO VAN LOS UPDATE
 -- POR FAVOR, COLOCARLOS EN EL ORDEN POR PRECAUCIÓN
 
@@ -495,6 +714,9 @@ UPDATE lote SET observaciones = 'Revisión técnica aprobada: producto apto para
 
 --se cambia/actualiza el valor de "55" por el "60" en la tabla "20" juan david
 update remision set cantidad_remitida = 60 where remision.cantidad_remitida = 55;
+
+-- Se actualiza la descripcion en la tabla traslado (21) / Marce
+UPDATE traslado SET descripcion = 'Traslado de tienda 1 a tienda 2 para acabar existencias en stock' WHERE id = 1;
 
 
 
@@ -515,6 +737,9 @@ DELETE FROM producto WHERE id = 11;
 
 -- se elimina en la tabla remision "20" la fila de cantidad remitida juan david
 delete from remision where remision.cantidad_remitida = 55;
+
+-- Delete en la tabla 24 / Marce
+DELETE FROM traslado_producto_sitio WHERE id = 10;
 
 
 -- A PARTIR DE AQUÍ ABAJO VAN LOS JOIN
@@ -562,6 +787,14 @@ c.id_cuenta_sitio= r.id
 inner join producto_sitio ps ON
 ps.id = r.id_producto_sitio;
 
+-- Inner join de Marce -> muestra la descripcion y la cantidad de productos del traslado
+SELECT 
+    t.descripcion,
+    tps.cantidad_traslado
+FROM traslado_producto_sitio tps
+INNER JOIN traslado t ON tps.id_traslado = t.id;
+
+
 
 -- A PARTIR DE AQUÍ ABAJO VAN LAS CONSULTAS Y SUBCONSULTAS
 -- POR FAVOR, COLOCARLOS EN EL ORDEN POR PRECAUCIÓN 
@@ -597,4 +830,16 @@ FROM lote l
 WHERE l.id_producto IN (
     SELECT p.id
     FROM producto p
+);
+
+-- Obtener la info de los traslados que tengan "Traslado de tienda 1 a tienda 2 para acabar existencias en stock" en la descripcion / Marce
+SELECT 
+    id, 
+    id_producto_sitio, 
+    cantidad_traslado
+FROM traslado_producto_sitio
+WHERE id_traslado IN(
+    SELECT id 
+    FROM traslado 
+    WHERE descripcion ILIKE '%Traslado de tienda 1 a tienda 2 para acabar existencias en stock%'
 );
