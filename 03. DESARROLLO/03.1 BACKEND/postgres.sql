@@ -803,3 +803,15 @@ WHERE l.id_producto IN (
     SELECT p.id
     FROM producto p
 );
+
+-- Obtener la info de los traslados que tengan "Traslado de tienda 1 a tienda 2 para acabar existencias en stock" en la descripcion / Marce
+SELECT 
+    id, 
+    id_producto_sitio, 
+    cantidad_traslado
+FROM traslado_producto_sitio
+WHERE id_traslado IN(
+    SELECT id 
+    FROM traslado 
+    WHERE descripcion ILIKE '%Traslado de tienda 1 a tienda 2 para acabar existencias en stock%'
+);
