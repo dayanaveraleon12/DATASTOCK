@@ -28,6 +28,14 @@ comment on column usuario.correo_electronico is 'Correo del usuario';
 comment on column usuario.contrasenia is 'Contraseña del usuario a crear';
 comment on column usuario.token_cambio_contrasenia is 'Token o código de 6 digitos generado al correo registrado del usuario, para recuperar su contraseña y acceso';
 
+-- Package "actores" / tipo_documento /3 / Day
+create table tipo_documento(
+	id integer not null,
+	tipo_documento varchar(10) not null,
+	constraint pk_tipo_documento primary key(id),
+	constraint uk_tipo_documento unique(tipo_documento)
+);
+
 -- Tabla 6 presentacion Esteban
 create table presentacion(
     id integer not null,
