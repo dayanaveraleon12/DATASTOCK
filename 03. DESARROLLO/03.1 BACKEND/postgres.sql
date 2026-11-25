@@ -926,3 +926,9 @@ WHERE id_traslado IN(
     FROM traslado 
     WHERE descripcion ILIKE '%Traslado de tienda 1 a tienda 2 para acabar existencias en stock%'
 );
+
+
+select * from producto_sitio;
+
+
+-- procedimientos almacenados
