@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity Salida.
+    -->
+    <changeSet id="20231204152214-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="cuenta_sitio_id"
+                                 baseTableName="salida"
+                                 constraintName="fk_salida__cuenta_sitio_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="cuenta_sitio"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="motivo_salida_id"
+                                 baseTableName="salida"
+                                 constraintName="fk_salida__motivo_salida_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="motivo_salida"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="evidencia_salida_id"
+                                 baseTableName="salida"
+                                 constraintName="fk_salida__evidencia_salida_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="evidencia_salida"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="salida_id"
+                                 baseTableName="rel_salida__producto_sitios"
+                                 constraintName="fk_rel_salida__producto_sitios__salida_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="salida"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="producto_sitios_id"
+                                 baseTableName="rel_salida__producto_sitios"
+                                 constraintName="fk_rel_salida__producto_sitios__producto_sitios_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="producto_sitio"
+                                 />
+    </changeSet>
+</databaseChangeLog>

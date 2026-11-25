@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity TrasladoProductoSitio.
+    -->
+    <changeSet id="20231204151514-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="traslado_id"
+                                 baseTableName="traslado_producto_sitio"
+                                 constraintName="fk_traslado_producto_sitio__traslado_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="traslado"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="producto_sitio_id"
+                                 baseTableName="traslado_producto_sitio"
+                                 constraintName="fk_traslado_producto_sitio__producto_sitio_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="producto_sitio"
+                                 />
+    </changeSet>
+</databaseChangeLog>

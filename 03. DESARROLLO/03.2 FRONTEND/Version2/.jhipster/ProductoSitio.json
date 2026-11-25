@@ -1,0 +1,78 @@
+{
+  "annotations": {
+    "changelogDate": "20231204151414"
+  },
+  "applications": ["datastock"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "cantidadSitio",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required", "min"],
+      "fieldValidateRulesMin": "0"
+    }
+  ],
+  "name": "ProductoSitio",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityField": "nombreEspecificacion",
+      "otherEntityName": "producto",
+      "otherEntityRelationshipName": "productoSitios",
+      "relationshipName": "producto",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityField": "nombre",
+      "otherEntityName": "sitio",
+      "otherEntityRelationshipName": "productoSitios",
+      "relationshipName": "sitio",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityField": "codigoLote",
+      "otherEntityName": "lote",
+      "otherEntityRelationshipName": "productoSitios",
+      "relationshipName": "lote",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityField": "tipoEstado",
+      "otherEntityName": "estadoProducto",
+      "otherEntityRelationshipName": "productoSitios",
+      "relationshipName": "estadoProducto",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityName": "trasladoProductoSitio",
+      "otherEntityRelationshipName": "productoSitio",
+      "relationshipName": "trasladoProductoSitios",
+      "relationshipSide": "right",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "remision",
+      "otherEntityRelationshipName": "productoSitio",
+      "relationshipName": "remisiones",
+      "relationshipSide": "right",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "salida",
+      "otherEntityRelationshipName": "productoSitios",
+      "relationshipName": "salidas",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

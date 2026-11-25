@@ -1,0 +1,68 @@
+{
+  "annotations": {
+    "changelogDate": "20231204151114"
+  },
+  "applications": ["datastock"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "nombreEspecificacion",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength", "unique"],
+      "fieldValidateRulesMaxlength": "200"
+    },
+    {
+      "fieldName": "estadoDisponibilidad",
+      "fieldType": "Estado",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "ACTIVO,INACTIVO"
+    }
+  ],
+  "name": "Producto",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityField": "nombre",
+      "otherEntityName": "categoria",
+      "otherEntityRelationshipName": "productos",
+      "relationshipName": "categoria",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityField": "tipoPresentacion",
+      "otherEntityName": "presentacion",
+      "otherEntityRelationshipName": "productos",
+      "relationshipName": "presentacion",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityField": "marca",
+      "otherEntityName": "marca",
+      "otherEntityRelationshipName": "productos",
+      "relationshipName": "marca",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityName": "lote",
+      "otherEntityRelationshipName": "producto",
+      "relationshipName": "lotes",
+      "relationshipSide": "right",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "productoSitio",
+      "otherEntityRelationshipName": "producto",
+      "relationshipName": "productoSitios",
+      "relationshipSide": "right",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

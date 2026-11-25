@@ -1,0 +1,58 @@
+{
+  "annotations": {
+    "changelogDate": "20231204152114"
+  },
+  "applications": ["datastock"],
+  "documentation": "Solo para el empleado que únicamente sube el archivo de excel",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "archivoExcel",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "nombreExcel",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "fechaCarga",
+      "fieldType": "LocalDate",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "name": "EvidenciaSalida",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityField": "numeroDocumento",
+      "otherEntityName": "cuenta",
+      "otherEntityRelationshipName": "evidenciaSalidas",
+      "relationshipName": "cuenta",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityField": "nombre",
+      "otherEntityName": "sitio",
+      "otherEntityRelationshipName": "evidenciaSalidas",
+      "relationshipName": "sitioSubida",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityName": "salida",
+      "otherEntityRelationshipName": "evidenciaSalida",
+      "relationshipName": "salidas",
+      "relationshipSide": "right",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

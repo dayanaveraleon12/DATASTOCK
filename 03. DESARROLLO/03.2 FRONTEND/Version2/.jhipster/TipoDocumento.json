@@ -1,0 +1,28 @@
+{
+  "annotations": {
+    "changelogDate": "20231204150414"
+  },
+  "applications": ["datastock"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "tipoDocumento",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "10"
+    }
+  ],
+  "name": "TipoDocumento",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "cuenta",
+      "otherEntityRelationshipName": "tipoDocumento",
+      "relationshipName": "cuentas",
+      "relationshipSide": "right",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}
