@@ -13,20 +13,21 @@ config {
     enableTranslation false
     nativeLanguage es
     languages [es]
-    websocket false
+    websocket no
     testFrameworks [cucumber]
    
     //entitySuffix false
     jhiPrefix project
     reactive false
     serverPort 8080
-    searchEngine false
+    searchEngine no
     clientTheme cyborg
     clientThemeVariant primary
     dtoSuffix DTO
     skipClient false
     skipServer false
  
+
    
 }
     entities  *
@@ -168,7 +169,7 @@ relationship OneToOne {
 relationship ManyToOne {
   /* actores */
   Cuenta{tipoDocumento(tipoDocumento) required} to TipoDocumento{cuentas}
-  HistorialError{cuenta(numeroDocumento)} to Cuenta{historialErrores}
+  HistorialError{cuenta(numeroDocumento)required} to Cuenta{historialErrores}
 
   /* mercancia */
   Producto{categoria(nombre) required} to Categoria{productos}
@@ -208,7 +209,7 @@ relationship ManyToOne {
 
 /* Tabla intermedia producto_sitio_salida */
 relationship ManyToMany {
-  Salida{productoSitios} to ProductoSitio{salidas}
+  Salida{productoSitios required} to ProductoSitio{salidas}
 }
 
 // fin de mis entidades
