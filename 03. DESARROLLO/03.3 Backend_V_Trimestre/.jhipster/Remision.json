@@ -1,0 +1,46 @@
+{
+  "annotations": {
+    "changelogDate": "20231204151814"
+  },
+  "applications": ["datastock"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "cantidadRemitida",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required", "min"],
+      "fieldValidateRulesMin": "0"
+    }
+  ],
+  "name": "Remision",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "productoSitio",
+      "otherEntityRelationshipName": "remisiones",
+      "relationshipName": "productoSitio",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityName": "codigo",
+      "otherEntityRelationshipName": "remisiones",
+      "relationshipName": "codigo",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityField": "nombre",
+      "otherEntityName": "sitio",
+      "otherEntityRelationshipName": "remisionesDestino",
+      "relationshipName": "sitioDestino",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

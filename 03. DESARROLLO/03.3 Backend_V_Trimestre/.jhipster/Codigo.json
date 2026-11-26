@@ -1,0 +1,55 @@
+{
+  "annotations": {
+    "changelogDate": "20231204151714"
+  },
+  "applications": ["datastock"],
+  "documentation": "Cabecera de la remisión: los datos comunes se guardan una sola vez",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "fechaRemision",
+      "fieldType": "LocalDate",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "codigo",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "estadoOperacion",
+      "fieldType": "EstadoOperacion",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "PENDIENTE,ACEPTADA,RECHAZADA"
+    }
+  ],
+  "name": "Codigo",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "cuentaSitio",
+      "otherEntityRelationshipName": "codigos",
+      "relationshipName": "cuentaSitio",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityName": "remision",
+      "otherEntityRelationshipName": "codigo",
+      "relationshipName": "remisiones",
+      "relationshipSide": "right",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "traslado",
+      "otherEntityRelationshipName": "codigo",
+      "relationshipName": "traslados",
+      "relationshipSide": "right",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

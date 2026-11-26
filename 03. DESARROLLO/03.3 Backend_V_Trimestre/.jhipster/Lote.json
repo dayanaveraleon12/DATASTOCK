@@ -1,0 +1,65 @@
+{
+  "annotations": {
+    "changelogDate": "20231204151214"
+  },
+  "applications": ["datastock"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "fechaIngreso",
+      "fieldType": "LocalDate",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "fechaVencimiento",
+      "fieldType": "LocalDate",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "codigoLote",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "100"
+    },
+    {
+      "fieldName": "descripcion",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "10"
+    },
+    {
+      "fieldName": "facturaProveedor",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "cantidadIngresada",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required", "min"],
+      "fieldValidateRulesMin": "0"
+    }
+  ],
+  "name": "Lote",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityField": "nombreEspecificacion",
+      "otherEntityName": "producto",
+      "otherEntityRelationshipName": "lotes",
+      "relationshipName": "producto",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityName": "productoSitio",
+      "otherEntityRelationshipName": "lote",
+      "relationshipName": "productoSitios",
+      "relationshipSide": "right",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}
