@@ -50,7 +50,7 @@ enum EstadoOperacion {
 /* ===================== ACTORES ===================== */
 
 entity TipoDocumento {
-  tipoDocumento String required maxlength(30)
+  tipoDocumento String required unique maxlength(30)
 }
 
 entity Cuenta {
@@ -192,8 +192,8 @@ relationship ManyToOne {
 
   Codigo{cuentaSitio required} to CuentaSitio{codigos}
 
-  Remision{productoSitio required} to ProductoSitio{remisiones}
-  Remision{codigo required} to Codigo{remisiones}
+  Remision{productoSitio(id_producto) required} to ProductoSitio{remisiones}
+  Remision{codigo(EstadoOperacion) required} to Codigo{remisiones}
   Remision{sitioDestino(nombre) required} to Sitio{remisionesDestino}
 
   Traslado{cuentaSitio required} to CuentaSitio{traslados}
